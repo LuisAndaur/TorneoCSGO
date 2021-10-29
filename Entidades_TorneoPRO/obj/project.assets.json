@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LuisAndaur\\source\\repos\\Andaur.Luis.2E.TPFinal\\Entidades_TorneoPRO\\Entidades_TorneoPRO.csproj",
+      "projectUniqueName": "C:\\Users\\LuisAndaur\\source\\repos\\TP3\\TorneoCSGO\\Entidades_TorneoPRO\\Entidades_TorneoPRO.csproj",
       "projectName": "Entidades_TorneoPRO",
-      "projectPath": "C:\\Users\\LuisAndaur\\source\\repos\\Andaur.Luis.2E.TPFinal\\Entidades_TorneoPRO\\Entidades_TorneoPRO.csproj",
+      "projectPath": "C:\\Users\\LuisAndaur\\source\\repos\\TP3\\TorneoCSGO\\Entidades_TorneoPRO\\Entidades_TorneoPRO.csproj",
       "packagesPath": "C:\\Users\\LuisAndaur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LuisAndaur\\source\\repos\\Andaur.Luis.2E.TPFinal\\Entidades_TorneoPRO\\obj\\",
+      "outputPath": "C:\\Users\\LuisAndaur\\source\\repos\\TP3\\TorneoCSGO\\Entidades_TorneoPRO\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
