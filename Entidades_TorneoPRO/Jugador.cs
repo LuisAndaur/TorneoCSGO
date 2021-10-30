@@ -8,32 +8,23 @@ namespace Entidades_TorneoPRO
 {
     public class Jugador
     {
-        private int id;
+        private int nroJugador;
         private string nombre;
         private int edad;
         private string genero;
         private string nacionalidad;
         private string especialidad;
         private bool primerTorneo;
+        private Estadistica eJugador;
 
-        public enum EGenero
+        public int NroJugador
         {
-            Male, Female
-        }
-
-        public enum EEspecialidad
-        {
-            XS, S, M, L, XL, XXL
-        }
-
-        public int Id
-        {
-            get { return id; }
+            get { return nroJugador; }
             set
             {
                 if (value > 0)
                 {
-                    id = value;
+                    nroJugador = value;
                 }
             }
         }
@@ -47,6 +38,10 @@ namespace Entidades_TorneoPRO
                 {
                     nombre = value;
                 }
+                else
+                {
+                    throw new Exception_StringNullOrEmpty();
+                }
             }
         }
 
@@ -55,9 +50,13 @@ namespace Entidades_TorneoPRO
             get { return edad; }
             set
             {
-                if (value > 11)
+                if (value > 11 && value <80)
                 {
                     edad = value;
+                }
+                else
+                {
+                    throw new Exception_EdadInvalida();
                 }
             }
         }
@@ -67,10 +66,14 @@ namespace Entidades_TorneoPRO
             get { return genero; }
             set
             {
-                //if (value == EGenero.Female || value == EGenero.Male)
-                //{
-                genero = value;
-                //}                
+                if (value.Trim() == "Female" || value.Trim() == "Male")
+                {
+                    genero = value;
+                }
+                else
+                {
+                    throw new Exception_GeneroInvalido();
+                }
             }
         }
 
@@ -83,6 +86,10 @@ namespace Entidades_TorneoPRO
                 {
                     nacionalidad = value;
                 }
+                else
+                {
+                    throw new Exception_StringNullOrEmpty();
+                }
             }
         }        
 
@@ -91,12 +98,14 @@ namespace Entidades_TorneoPRO
             get { return especialidad; }
             set 
             {
-                //if (value == EDistancia.XS || value == EDistancia.S 
-                //    || value == EDistancia.M || value == EDistancia.L 
-                //    || value == EDistancia.XL || value == EDistancia.XXL)
-                //{
-                especialidad = value;
-                //}
+                if (value == "XS" || value == "S" || value == "M" || value == "L" || value == "XL" || value == "XXL")
+                {
+                    especialidad = value;
+                }
+                else
+                {
+                    throw new Exception_EspecialidadFueraDeRango();
+                }
             }
         }
 
@@ -112,15 +121,23 @@ namespace Entidades_TorneoPRO
             }
         }
 
-        public Jugador(int id, string nombre, int edad, string genero, string nacionalidad, string especialidad, bool primerTorneo)
+        public Jugador()
         {
-            this.Id = id;
+
+        }
+        public Jugador(int nroJugador, string nombre, int edad, string genero, string nacionalidad, string especialidad, bool primerTorneo) : this()
+        {
+            this.NroJugador = nroJugador;
             this.Nombre = nombre;
             this.Edad = edad;
             this.Genero = genero;
             this.Nacionalidad = nacionalidad;
             this.especialidad = especialidad;
             this.PrimerTorneo = primerTorneo;
+            this.eJugador = new Estadistica();
         }
+
+        
+
     }
 }

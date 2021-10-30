@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entidades_TorneoPRO
 {
-    class Exception_SerializacionJson : Exception
+    public class Exception_SerializacionJson : Exception
     {
+        private string mensajeError;
+
         public Exception_SerializacionJson(string message) : base(message)
         {
-
+            this.mensajeError = "Falla en la serializacion Json";
         }
 
         public Exception_SerializacionJson(string message, Exception innerException ) : base(message, innerException)

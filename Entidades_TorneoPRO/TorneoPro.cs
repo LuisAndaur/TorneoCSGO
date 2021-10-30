@@ -51,5 +51,35 @@ namespace Entidades_TorneoPRO
             listaJugadores = SerializacionJson<List<Jugador>>.LeerInicial("listaJugadores.json");
         }
 
+        public static bool ExisteJugador(int numero)
+        {
+            foreach (Jugador item in listaJugadores)
+            {
+                if (item.NroJugador == numero)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static void AgregarJugador(string nroJugador, string nombre, string edad, string genero, string nacionalidad, string especialidad, bool primerTorneo)
+        {
+            if (!string.IsNullOrEmpty(nroJugador) && !string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(edad) && !string.IsNullOrEmpty(genero) && !string.IsNullOrEmpty(nacionalidad) && !string.IsNullOrEmpty(especialidad))
+            {
+                int.TryParse(nroJugador, out int auxNroJugador);
+                if (ExisteJugador(auxNroJugador))
+                {
+                    throw new Exception_NroJugadorYaExiste();
+                }
+                int.TryParse(edad, out int auxEdad);                
+
+                listaJugadores.Add(new Jugador(auxNroJugador, nombre, auxEdad, genero, nacionalidad, especialidad, primerTorneo));
+            }
+            else
+            {
+                throw new Exception_ErrorAgregarJugador();
+            }            
+        }
     }
 }

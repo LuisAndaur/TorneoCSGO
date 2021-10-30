@@ -93,6 +93,7 @@ namespace Frm_TorneoPRO
             this.dgv_ListaJugadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ListaJugadores.Size = new System.Drawing.Size(810, 497);
             this.dgv_ListaJugadores.TabIndex = 0;
+            this.dgv_ListaJugadores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaJugadores_CellClick);
             // 
             // label1
             // 
