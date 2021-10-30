@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +13,15 @@ namespace Frm_TorneoPRO
 {
     public partial class Frm_Home : Form
     {
+        private SoundPlayer sonidoEntradaCarga;
         public Frm_Home()
         {
             InitializeComponent();
+        }
+
+        private void Frm_Home_Load(object sender, EventArgs e)
+        {
+            SonidoAmbiente();
         }
 
         private void btn_AdministrarJugadores_Click(object sender, EventArgs e)
@@ -40,6 +47,20 @@ namespace Frm_TorneoPRO
             {
                 e.Cancel = true;
             }                
+        }        
+
+        public void SonidoAmbiente()
+        {
+            sonidoEntradaCarga = new SoundPlayer($"{Environment.CurrentDirectory}\\csgo-fondohome.wav");
+            sonidoEntradaCarga.PlayLooping();
         }
+
+        
+
+        //public void Sonido2()
+        //{
+        //    var sonido2 = new SoundPlayer("Resources\\Sonidos\\sonido2.wav");
+        //    sonido2.Play();
+        //}
     }
 }

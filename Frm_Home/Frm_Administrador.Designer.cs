@@ -29,6 +29,8 @@ namespace Frm_TorneoPRO
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Administrador));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_ListaJugadores = new System.Windows.Forms.DataGridView();
@@ -56,17 +58,39 @@ namespace Frm_TorneoPRO
             // 
             // dgv_ListaJugadores
             // 
-            this.dgv_ListaJugadores.AllowUserToAddRows = false;
-            this.dgv_ListaJugadores.AllowUserToDeleteRows = false;
+            this.dgv_ListaJugadores.AllowUserToOrderColumns = true;
             this.dgv_ListaJugadores.AllowUserToResizeColumns = false;
             this.dgv_ListaJugadores.AllowUserToResizeRows = false;
+            this.dgv_ListaJugadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ListaJugadores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.dgv_ListaJugadores.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_ListaJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListaJugadores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_ListaJugadores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSalmon;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ListaJugadores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_ListaJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ListaJugadores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_ListaJugadores.EnableHeadersVisualStyles = false;
+            this.dgv_ListaJugadores.GridColor = System.Drawing.Color.Firebrick;
             this.dgv_ListaJugadores.Location = new System.Drawing.Point(3, 21);
             this.dgv_ListaJugadores.Name = "dgv_ListaJugadores";
+            this.dgv_ListaJugadores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_ListaJugadores.RowHeadersVisible = false;
+            this.dgv_ListaJugadores.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSalmon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.dgv_ListaJugadores.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ListaJugadores.RowTemplate.Height = 25;
+            this.dgv_ListaJugadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ListaJugadores.Size = new System.Drawing.Size(810, 497);
             this.dgv_ListaJugadores.TabIndex = 0;
             // 

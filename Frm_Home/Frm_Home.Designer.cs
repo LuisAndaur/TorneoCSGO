@@ -142,6 +142,7 @@ namespace Frm_TorneoPRO
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Home";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Home_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

@@ -48,7 +48,7 @@ namespace Entidades_TorneoPRO
 
         private static void CargarJugadores()
         {
-            SerializacionJson<List<Jugador>>.LeerInicial("listaJugadores.json");
+            listaJugadores = SerializacionJson<List<Jugador>>.LeerInicial("listaJugadores.json");
         }
 
     }

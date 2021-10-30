@@ -76,30 +76,14 @@ namespace Entidades_TorneoPRO
         //Path.GetFullPath("..\\..\\..\\..\\..\\Andaur.Luis.2E.TPFinal\\Frm_Home\\Resources\\"); // @"C:\Users\LuisAndaur\source\repos\Andaur.Luis.2E.TPFinal\Frm_Home\Resources\";
         public static T LeerInicial(string nombre)
         {
-            path = Path.GetFullPath("..\\..\\..\\..\\..\\Andaur.Luis.2E.TPFinal\\Frm_Home\\Resources\\");
-            string archivo = string.Empty;
+            path = $"{Environment.CurrentDirectory}\\{nombre}";//Path.GetFullPath("..\\..\\..\\..\\..\\Andaur.Luis.2E.TPFinal\\Frm_Home\\Resources\\");
+            string info = string.Empty;
             string informacionRecuperada = string.Empty;
             T datosRecuperados = default;
             try
             {
-
-                if (Directory.Exists(path))
-                {
-                    string[] archivosEnElPath = Directory.GetFiles(path);
-                    foreach (string path in archivosEnElPath)
-                    {
-                        if (path.Contains(nombre))
-                        {
-                            archivo = path;
-                            break;
-                        }
-                    }
-
-                    if (archivo != null)
-                    {
-                        datosRecuperados = JsonSerializer.Deserialize<T>(File.ReadAllText(archivo));
-                    }
-                }
+                info = File.ReadAllText(path);
+                datosRecuperados = JsonSerializer.Deserialize<T>(info);
                 return datosRecuperados;
             }
             catch (Exception e)

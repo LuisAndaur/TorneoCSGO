@@ -81,16 +81,6 @@ namespace Frm_TorneoPRO.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Byte[].
-        /// </summary>
-        public static byte[] listaJugadores {
-            get {
-                object obj = ResourceManager.GetObject("listaJugadores", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Logo_CSGO {

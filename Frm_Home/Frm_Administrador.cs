@@ -23,13 +23,14 @@ namespace Frm_TorneoPRO
 
         private void Frm_Administrador_Load(object sender, EventArgs e)
         {
-            //listaJugadores = TorneoPro.ListaJugadores;
+            listaJugadores = TorneoPro.ListaJugadores;
+            //dgv_ListaJugadores.Rows.Clear();
+
+            dgv_ListaJugadores.DataSource = listaJugadores;
         }
 
         private void btn_Volver_Click(object sender, EventArgs e)
         {
-            //Frm_Home home = new Frm_Home();
-            //home.Show();
             this.Close();
         }
 
