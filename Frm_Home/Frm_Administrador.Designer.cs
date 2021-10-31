@@ -58,7 +58,8 @@ namespace Frm_TorneoPRO
             // 
             // dgv_ListaJugadores
             // 
-            this.dgv_ListaJugadores.AllowUserToOrderColumns = true;
+            this.dgv_ListaJugadores.AllowUserToAddRows = false;
+            this.dgv_ListaJugadores.AllowUserToDeleteRows = false;
             this.dgv_ListaJugadores.AllowUserToResizeColumns = false;
             this.dgv_ListaJugadores.AllowUserToResizeRows = false;
             this.dgv_ListaJugadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -80,6 +81,7 @@ namespace Frm_TorneoPRO
             this.dgv_ListaJugadores.GridColor = System.Drawing.Color.Firebrick;
             this.dgv_ListaJugadores.Location = new System.Drawing.Point(3, 21);
             this.dgv_ListaJugadores.Name = "dgv_ListaJugadores";
+            this.dgv_ListaJugadores.ReadOnly = true;
             this.dgv_ListaJugadores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_ListaJugadores.RowHeadersVisible = false;
             this.dgv_ListaJugadores.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;

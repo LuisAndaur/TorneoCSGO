@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades_TorneoPRO
 {
-    class Exception_EspecialidadFueraDeRango : Exception
+    public class Exception_EspecialidadFueraDeRango : Exception
     {
         private string mensajeError;
 

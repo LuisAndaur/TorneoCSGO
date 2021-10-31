@@ -21,6 +21,11 @@ namespace Frm_TorneoPRO
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Precarga elementos antes de abrir el form depende el tipo necesario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_ModalABM_Load(object sender, EventArgs e)
         {
             if (tipo == "agregar")
@@ -43,27 +48,90 @@ namespace Frm_TorneoPRO
             }
         }
 
+        /// <summary>
+        /// Constructor del form modal
+        /// </summary>
+        /// <param name="tipo">Tipo de accion</param>
         public Frm_ModalABM(string tipo) : this()
         {
             this.tipo = tipo;
         }
 
+        /// <summary>
+        /// Constructor del form modal
+        /// </summary>
+        /// <param name="tipo">Tipo de accion</param>
+        /// <param name="jugador">Un jugador seleccionado</param>
         public Frm_ModalABM(string tipo, Jugador jugador) : this()
         {
             this.tipo = tipo;
             this.auxJugador = jugador;            
         }
-        
 
+        /// <summary>
+        /// Se agrega un nuevo jugador
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="Exception_NroJugadorYaExiste">Error si el numero ya existe</exception>
+        /// <exception cref="Exception_EdadInvalida">Error si la edad esta fuera de rango</exception>
+        /// <exception cref="Exception_StringNullOrEmpty">Error si hay un string vacio o null</exception>
+        /// <exception cref="Exception_GeneroInvalido">Error si ingresa un genero invalido</exception>
+        /// <exception cref="Exception_EspecialidadFueraDeRango">Error si se ingresa una especialidad invalida</exception>
+        /// <exception cref="Exception_ErrorAgregarJugador">Error si no se puedo agregar el jugador</exception>
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            if (DialogResult != DialogResult.OK)
+            try
             {
-
-                this.Close();
+                if (!string.IsNullOrEmpty(txt_NroJugador.Text) && !string.IsNullOrEmpty(txt_Nombre.Text) && !string.IsNullOrEmpty(txt_Nacionalidad.Text) && !string.IsNullOrEmpty(cmb_Genero.Text) && !string.IsNullOrEmpty(cmb_Especialidad.Text) && !string.IsNullOrEmpty(txt_Edad.Text))
+                {
+                    if (DialogResult != DialogResult.OK)
+                    {
+                        TorneoPro.AgregarJugador(txt_NroJugador.Text, txt_Nombre.Text, txt_Edad.Text, cmb_Genero.Text, txt_Nacionalidad.Text, cmb_Especialidad.Text, ckb_PrimerTorneo.Checked);
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe completar todos los campos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
+            catch (Exception_NroJugadorYaExiste eNroJugador)
+            {
+                MessageBox.Show(eNroJugador.Message, "Numero de jugador ya existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //throw new Exception("Edad no valida", eNroJugador);
+            }
+            catch (Exception_EdadInvalida eEdad)
+            {
+                MessageBox.Show(eEdad.Message, "Edad no valida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_StringNullOrEmpty eString)
+            {
+                MessageBox.Show(eString.Message, "String empty o null", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_GeneroInvalido eGenero)
+            {
+                MessageBox.Show(eGenero.Message, "Genero invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_EspecialidadFueraDeRango eEspecialidad)
+            {
+                MessageBox.Show(eEspecialidad.Message, "Especialidad fuera de las permitidas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_ErrorAgregarJugador eAgregar)
+            {
+                MessageBox.Show(eAgregar.Message, "Error al intentar agregar un jugador", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception auxEx)
+            {
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
 
+        /// <summary>
+        /// Edita el jugador seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Editar_Click(object sender, EventArgs e)
         {
             if (DialogResult != DialogResult.OK)

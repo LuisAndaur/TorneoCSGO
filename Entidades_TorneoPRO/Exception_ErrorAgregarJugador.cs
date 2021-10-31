@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades_TorneoPRO
 {
-    class Exception_ErrorAgregarJugador : Exception
+    public class Exception_ErrorAgregarJugador : Exception
     {
         private string mensajeError;
 

@@ -17,6 +17,9 @@ namespace Entidades_TorneoPRO
         private bool primerTorneo;
         private Estadistica eJugador;
 
+        /// <summary>
+        /// Propiedad numero identificador del jugador
+        /// </summary>
         public int NroJugador
         {
             get { return nroJugador; }
@@ -29,6 +32,10 @@ namespace Entidades_TorneoPRO
             }
         }
 
+        /// <summary>
+        /// Propiedad nombre del jugador
+        /// </summary>
+        /// <exception cref="Exception_StringNullOrEmpty">Error si el nombre viene vacio o null</exception>
         public string Nombre
         {
             get { return nombre; }
@@ -45,12 +52,16 @@ namespace Entidades_TorneoPRO
             }
         }
 
+        /// <summary>
+        /// Propiedad edad del jugador
+        /// </summary>
+        /// <exception cref="Exception_EdadInvalida">Error si la edad esta fuera de rango</exception>
         public int Edad
         {
             get { return edad; }
             set
             {
-                if (value > 11 && value <80)
+                if (value > 11 && value < 80)
                 {
                     edad = value;
                 }
@@ -61,6 +72,10 @@ namespace Entidades_TorneoPRO
             }
         }
 
+        /// <summary>
+        /// Propiedad genero del jugador
+        /// </summary>
+        /// <exception cref="Exception_GeneroInvalido">Error si el genero es incorrecto</exception>
         public string Genero
         {
             get { return genero; }
@@ -77,6 +92,10 @@ namespace Entidades_TorneoPRO
             }
         }
 
+        /// <summary>
+        /// Propiedad nacionalidad del jugador
+        /// </summary>
+        /// <exception cref="Exception_StringNullOrEmpty">Error si la nacionalidad viene vacio o null</exception>
         public string Nacionalidad
         {
             get { return nacionalidad; }
@@ -91,8 +110,12 @@ namespace Entidades_TorneoPRO
                     throw new Exception_StringNullOrEmpty();
                 }
             }
-        }        
+        }
 
+        /// <summary>
+        /// Propiedad Especialidad del jugador
+        /// </summary>
+        /// <exception cref="Exception_EspecialidadFueraDeRango">Error si la especialidad no es correcta</exception>
         public string Especialidad
         {
             get { return especialidad; }
@@ -109,6 +132,9 @@ namespace Entidades_TorneoPRO
             }
         }
 
+        /// <summary>
+        /// Propiedad Primer Torneo del jugador
+        /// </summary>
         public bool PrimerTorneo
         {
             get { return primerTorneo; }
@@ -121,10 +147,24 @@ namespace Entidades_TorneoPRO
             }
         }
 
+        /// <summary>
+        /// Constructor de jugador por defecto vacio
+        /// </summary>
         public Jugador()
         {
 
         }
+
+        /// <summary>
+        /// Constructor jugador con parametros
+        /// </summary>
+        /// <param name="nroJugador">Nro identificador jugador</param>
+        /// <param name="nombre">nombre jugador></param>
+        /// <param name="edad">edad del jugador</param>
+        /// <param name="genero">genero del jugador</param>
+        /// <param name="nacionalidad">acionalidad del jugador</param>
+        /// <param name="especialidad">especialidad del jugador</param>
+        /// <param name="primerTorneo">primer torneo del jugador</param>
         public Jugador(int nroJugador, string nombre, int edad, string genero, string nacionalidad, string especialidad, bool primerTorneo) : this()
         {
             this.NroJugador = nroJugador;

@@ -34,37 +34,53 @@ namespace Frm_TorneoPRO
             try
             {
                 listaJugadores = TorneoPro.ListaJugadores;
-                dgv_ListaJugadores.Rows.Clear();
-                dgv_ListaJugadores.DataSource = listaJugadores;
+                RecargarListaJugadores();
             }
-            catch (Exception_SerializacionJson ex)
+            catch (Exception_SerializacionJson eSerializacion)
             {
-                throw new Exception_SerializacionJson("ERROR al cargar la lista",ex);
+                MessageBox.Show(eSerializacion.Message, "ERROR al cargar la lista json", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception auxEx)
             {
-                throw new Exception("Error inesperado", auxEx);
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
 
+        /// <summary>
+        /// Retorna al form principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Volver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Abre el form para agregar un nuevo jugador
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             Frm_ModalABM agregar = new Frm_ModalABM("agregar");
             agregar.ShowDialog();
+            RecargarListaJugadores();
         }
 
+        /// <summary>
+        /// Abre el form para editar al jugador seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Editar_Click(object sender, EventArgs e)
         {
             if (auxJugador.NroJugador > 0)
             {
                 Frm_ModalABM editar = new Frm_ModalABM("editar", auxJugador);
                 editar.ShowDialog();
+                RecargarListaJugadores();
             }
             else
             {
@@ -72,11 +88,21 @@ namespace Frm_TorneoPRO
             }            
         }
 
+        /// <summary>
+        /// Elimina al jugador seleccionado en la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Tomas los datos del jugador seleccionado en la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgv_ListaJugadores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indice = e.RowIndex;
@@ -90,6 +116,15 @@ namespace Frm_TorneoPRO
                 auxJugador.Especialidad = dgv_ListaJugadores.Rows[indice].Cells[5].Value.ToString();
                 auxJugador.PrimerTorneo = (bool)dgv_ListaJugadores.Rows[indice].Cells[6].Value;
             }
+        }
+
+        /// <summary>
+        /// Carga y refresca la lista de jugadores
+        /// </summary>
+        private void RecargarListaJugadores()
+        {
+            dgv_ListaJugadores.DataSource = null;
+            dgv_ListaJugadores.DataSource = listaJugadores;
         }
     }
 }

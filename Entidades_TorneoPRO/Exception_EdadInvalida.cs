@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades_TorneoPRO
 {
-    class Exception_EdadInvalida : Exception
+    public class Exception_EdadInvalida : Exception
     {
         private string mensajeError;
 
