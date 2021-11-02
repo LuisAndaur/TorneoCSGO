@@ -10,6 +10,9 @@
     <Compile Update="Frm_Home.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Frm_Mensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Frm_ModalABM.cs">
       <SubType>Form</SubType>
     </Compile>

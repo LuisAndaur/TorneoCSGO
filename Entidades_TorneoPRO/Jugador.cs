@@ -148,6 +148,15 @@ namespace Entidades_TorneoPRO
         }
 
         /// <summary>
+        /// Estadisticas del jugador
+        /// </summary>
+        public Estadistica Estadistica 
+        {
+            get {return eJugador; }
+            set {this.eJugador = value; } 
+        }
+
+        /// <summary>
         /// Constructor de jugador por defecto vacio
         /// </summary>
         public Jugador()

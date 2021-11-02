@@ -9,6 +9,9 @@ namespace Entidades_TorneoPRO
         private static double premio;
         private static string patrocinio;
         private static List<Jugador> listaJugadores;
+        private static List<Deathmatch> mapasDeathmatch;
+        private static List<Bomba> mapasBomba;
+        private static List<Rehenes> mapasRehenes;
 
         /// <summary>
         /// Propiedad estatica de la lista de jugadores
@@ -21,6 +24,51 @@ namespace Entidades_TorneoPRO
                 if (value != null)
                 {
                    listaJugadores = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Propiedad estatica de la lista de mapas bomba
+        /// </summary>
+        public static List<Bomba> MapasBomba
+        {
+            get { return mapasBomba; }
+            set
+            {
+                if (value != null)
+                {
+                    mapasBomba = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Propiedad estatica de la lista de mapas rehenes
+        /// </summary>
+        public static List<Rehenes> MapasRehenes
+        {
+            get { return mapasRehenes; }
+            set
+            {
+                if (value != null)
+                {
+                    mapasRehenes = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Propiedad estatica de la lista de mapas deathmatch
+        /// </summary>
+        public static List<Deathmatch> MapasDeathmatch
+        {
+            get { return mapasDeathmatch; }
+            set
+            {
+                if (value != null)
+                {
+                    mapasDeathmatch = value;
                 }
             }
         }
@@ -59,6 +107,7 @@ namespace Entidades_TorneoPRO
             patrocinio = "EASport";
             listaJugadores = new List<Jugador>();
             CargarJugadores();
+            CargarMapas();
         }
 
         /// <summary>
@@ -67,6 +116,24 @@ namespace Entidades_TorneoPRO
         private static void CargarJugadores()
         {
             listaJugadores = SerializacionJson<List<Jugador>>.LeerInicial("listaJugadores.json");
+            if (listaJugadores==null)
+            {
+                throw new Exception_SerializacionJson("No se deserializo la lista inicial");
+            }
+        }
+
+        /// <summary>
+        /// Metodo que carga la lista de mapas desde un archivo json
+        /// </summary>
+        private static void CargarMapas()
+        {
+            mapasDeathmatch = SerializacionJson<List<Deathmatch>>.LeerInicial("mapasDeathmatch.json");
+            mapasBomba = SerializacionJson<List<Bomba>>.LeerInicial("mapasBomba.json");
+            mapasRehenes = SerializacionJson<List<Rehenes>>.LeerInicial("mapasRehenes.json");
+            if (mapasDeathmatch == null || mapasBomba == null || mapasRehenes == null)
+            {
+                throw new Exception_SerializacionJson("No se deserializo la lista inicial");
+            }
         }
 
         /// <summary>
@@ -117,15 +184,55 @@ namespace Entidades_TorneoPRO
             }
         }
 
-
-        public static void EditarJugador()
+        /// <summary>
+        /// Edita los datos de un jugador de la lista por los nuevos pasados por parametro
+        /// </summary>
+        /// <param name="auxJugador">Jugador personalizado</param>
+        public static void EditarJugador(Jugador auxJugador)
         {
-
+            if (auxJugador != null)
+            {
+                foreach (Jugador jugador in listaJugadores)
+                {
+                    if (jugador.NroJugador == auxJugador.NroJugador)
+                    {
+                        jugador.Nombre = auxJugador.Nombre;
+                        jugador.Edad = auxJugador.Edad;
+                        jugador.Genero = auxJugador.Genero;
+                        jugador.Nacionalidad = auxJugador.Nacionalidad;
+                        jugador.Especialidad = auxJugador.Especialidad;
+                        jugador.PrimerTorneo = auxJugador.PrimerTorneo;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                throw new Exception_EditarJugador();
+            }
         }
 
-        public static void EliminarJugador()
+        /// <summary>
+        /// Elimina el juegador seleccionado
+        /// </summary>
+        /// <param name="auxJugador">Jugador a eliminar</param>
+        public static void EliminarJugador(Jugador auxJugador)
         {
-
+            if (auxJugador != null)
+            {
+                foreach (Jugador jugador in listaJugadores)
+                {
+                    if (jugador.NroJugador == auxJugador.NroJugador)
+                    {
+                        listaJugadores.Remove(jugador);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                throw new Exception_EliminarJugador();
+            }
         }
     }
 }

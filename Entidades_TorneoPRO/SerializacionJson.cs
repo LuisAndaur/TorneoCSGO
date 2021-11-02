@@ -73,10 +73,10 @@ namespace Entidades_TorneoPRO
                 throw new Exception_SerializacionJson($"Error en el archivo ubicado en {path}", e);
             }
         }
-        //Path.GetFullPath("..\\..\\..\\..\\..\\Andaur.Luis.2E.TPFinal\\Frm_Home\\Resources\\"); // @"C:\Users\LuisAndaur\source\repos\Andaur.Luis.2E.TPFinal\Frm_Home\Resources\";
+
         public static T LeerInicial(string nombre)
         {
-            path = $"{Environment.CurrentDirectory}\\{nombre}";//Path.GetFullPath("..\\..\\..\\..\\..\\Andaur.Luis.2E.TPFinal\\Frm_Home\\Resources\\");
+            path = $"{Environment.CurrentDirectory}\\{nombre}";
             string info = string.Empty;
             string informacionRecuperada = string.Empty;
             T datosRecuperados = default;

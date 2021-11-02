@@ -89,6 +89,8 @@ namespace Frm_TorneoPRO
                     {
                         TorneoPro.AgregarJugador(txt_NroJugador.Text, txt_Nombre.Text, txt_Edad.Text, cmb_Genero.Text, txt_Nacionalidad.Text, cmb_Especialidad.Text, ckb_PrimerTorneo.Checked);
                         this.Close();
+                        Frm_Mensaje mensaje = new Frm_Mensaje("Jugador agregado\nEXITOSAMENTE!");
+                        mensaje.ShowDialog();
                     }
                 }
                 else
@@ -99,7 +101,6 @@ namespace Frm_TorneoPRO
             catch (Exception_NroJugadorYaExiste eNroJugador)
             {
                 MessageBox.Show(eNroJugador.Message, "Numero de jugador ya existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //throw new Exception("Edad no valida", eNroJugador);
             }
             catch (Exception_EdadInvalida eEdad)
             {
@@ -124,7 +125,7 @@ namespace Frm_TorneoPRO
             catch (Exception auxEx)
             {
                 MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }            
+            }
         }
 
         /// <summary>
@@ -132,11 +133,64 @@ namespace Frm_TorneoPRO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// <exception cref="Exception_NroJugadorYaExiste">Error si el numero ya existe</exception>
+        /// <exception cref="Exception_EdadInvalida">Error si la edad esta fuera de rango</exception>
+        /// <exception cref="Exception_StringNullOrEmpty">Error si hay un string vacio o null</exception>
+        /// <exception cref="Exception_GeneroInvalido">Error si ingresa un genero invalido</exception>
+        /// <exception cref="Exception_EspecialidadFueraDeRango">Error si se ingresa una especialidad invalida</exception>
+        /// <exception cref="Exception_EditarJugador">Error si no se puedo editar el jugador</exception>
         private void btn_Editar_Click(object sender, EventArgs e)
         {
-            if (DialogResult != DialogResult.OK)
+            try
             {
-                this.Close();
+                if (!string.IsNullOrEmpty(txt_Nombre.Text) && !string.IsNullOrEmpty(txt_Nacionalidad.Text) && !string.IsNullOrEmpty(cmb_Genero.Text) && !string.IsNullOrEmpty(cmb_Especialidad.Text) && !string.IsNullOrEmpty(txt_Edad.Text))
+                {
+                    if (DialogResult != DialogResult.OK)
+                    {
+                        int.TryParse(txt_NroJugador.Text, out int auxNro);
+                        int.TryParse(txt_Edad.Text, out int auxEdad);
+                        auxJugador.NroJugador = auxNro;
+                        auxJugador.Nombre = txt_Nombre.Text;
+                        auxJugador.Genero = cmb_Genero.Text;
+                        auxJugador.Edad = auxEdad;
+                        auxJugador.Nacionalidad = txt_Nacionalidad.Text;
+                        auxJugador.Especialidad = cmb_Especialidad.Text;
+                        auxJugador.PrimerTorneo = ckb_PrimerTorneo.Checked;
+
+                        TorneoPro.EditarJugador(auxJugador);
+                        this.Close();
+                        Frm_Mensaje mensaje = new Frm_Mensaje("Jugador editado\nEXITOSAMENTE!");
+                        mensaje.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe completar todos los campos", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception_EdadInvalida eEdad)
+            {
+                MessageBox.Show(eEdad.Message, "Edad no valida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_StringNullOrEmpty eString)
+            {
+                MessageBox.Show(eString.Message, "String empty o null", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_GeneroInvalido eGenero)
+            {
+                MessageBox.Show(eGenero.Message, "Genero invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_EspecialidadFueraDeRango eEspecialidad)
+            {
+                MessageBox.Show(eEspecialidad.Message, "Especialidad fuera de las permitidas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_EditarJugador eEditar)
+            {
+                MessageBox.Show(eEditar.Message, "Error al editar jugador", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception auxEx)
+            {
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -166,21 +220,41 @@ namespace Frm_TorneoPRO
             }
         }
 
+        /// <summary>
+        /// Solo permite ingreo de numeros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txt_NroJugador_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloNumeros(e);
         }
 
+        /// <summary>
+        /// Solo permite ingreso de letras
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloLetras(e);
         }
 
+        /// <summary>
+        /// Solo permite ingreo de numeros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txt_Edad_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloNumeros(e);
         }
 
+        /// <summary>
+        /// Solo permite ingreso de letras
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txt_Nacionalidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             SoloLetras(e);

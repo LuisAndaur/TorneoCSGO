@@ -8,12 +8,16 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades_TorneoPRO;
+
 
 namespace Frm_TorneoPRO
 {
     public partial class Frm_Home : Form
     {
         private SoundPlayer sonidoEntradaCarga;
+        private bool flagSimulacion = false;
+
         public Frm_Home()
         {
             InitializeComponent();
@@ -43,16 +47,33 @@ namespace Frm_TorneoPRO
         }
 
         /// <summary>
+        /// Realiza una simulacion del torneo para realizar las estadisticas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_SimularTorneo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
         /// Lanza un form con las estadisticas del torneo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btn_Estadisticas_Click(object sender, EventArgs e)
         {
-            Frm_Estadistica estadistica = new Frm_Estadistica();
-            this.Hide();
-            estadistica.ShowDialog();
-            this.Show();
+            if (flagSimulacion)
+            {
+                Frm_Estadistica estadistica = new Frm_Estadistica();
+                this.Hide();
+                estadistica.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Debe simular el torneo antes de ver las estadisticas", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }            
         }
 
         /// <summary>
@@ -83,10 +104,16 @@ namespace Frm_TorneoPRO
         /// </summary>
         public void SonidoAmbiente()
         {
-            sonidoEntradaCarga = new SoundPlayer($"{Environment.CurrentDirectory}\\csgo-fondohome.wav");
+            sonidoEntradaCarga = new SoundPlayer($"{Environment.CurrentDirectory}\\csSound.wav");
             sonidoEntradaCarga.PlayLooping();
         }
 
- 
+        public static void SonidoSimularPartida()
+        {
+            SoundPlayer simulacion = new SoundPlayer($"{Environment.CurrentDirectory}\\simularpartida.wav");
+            simulacion.Play();
+        }
+
+        
     }
 }

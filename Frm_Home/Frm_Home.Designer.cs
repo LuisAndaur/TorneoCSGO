@@ -36,6 +36,7 @@ namespace Frm_TorneoPRO
             this.btn_AdministrarJugadores = new System.Windows.Forms.Button();
             this.btn_Estadisticas = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
+            this.btn_SimularTorneo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -97,7 +98,7 @@ namespace Frm_TorneoPRO
             this.btn_Estadisticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
             this.btn_Estadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Estadisticas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Estadisticas.Location = new System.Drawing.Point(53, 434);
+            this.btn_Estadisticas.Location = new System.Drawing.Point(53, 461);
             this.btn_Estadisticas.Name = "btn_Estadisticas";
             this.btn_Estadisticas.Size = new System.Drawing.Size(214, 35);
             this.btn_Estadisticas.TabIndex = 1;
@@ -114,7 +115,7 @@ namespace Frm_TorneoPRO
             this.btn_Salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
             this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Salir.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Salir.Location = new System.Drawing.Point(53, 488);
+            this.btn_Salir.Location = new System.Drawing.Point(53, 502);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(214, 35);
             this.btn_Salir.TabIndex = 2;
@@ -122,12 +123,30 @@ namespace Frm_TorneoPRO
             this.btn_Salir.UseVisualStyleBackColor = false;
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
+            // btn_SimularTorneo
+            // 
+            this.btn_SimularTorneo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
+            this.btn_SimularTorneo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btn_SimularTorneo.FlatAppearance.BorderSize = 2;
+            this.btn_SimularTorneo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btn_SimularTorneo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.btn_SimularTorneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SimularTorneo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_SimularTorneo.Location = new System.Drawing.Point(53, 420);
+            this.btn_SimularTorneo.Name = "btn_SimularTorneo";
+            this.btn_SimularTorneo.Size = new System.Drawing.Size(214, 35);
+            this.btn_SimularTorneo.TabIndex = 3;
+            this.btn_SimularTorneo.Text = "Simular Torneo";
+            this.btn_SimularTorneo.UseVisualStyleBackColor = false;
+            this.btn_SimularTorneo.Click += new System.EventHandler(this.btn_SimularTorneo_Click);
+            // 
             // Frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(80)))), ((int)(((byte)(84)))));
             this.ClientSize = new System.Drawing.Size(840, 595);
+            this.Controls.Add(this.btn_SimularTorneo);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_Estadisticas);
             this.Controls.Add(this.btn_AdministrarJugadores);
@@ -158,6 +177,7 @@ namespace Frm_TorneoPRO
         private System.Windows.Forms.Button btn_AdministrarJugadores;
         private System.Windows.Forms.Button btn_Estadisticas;
         private System.Windows.Forms.Button btn_Salir;
+        private System.Windows.Forms.Button btn_SimularTorneo;
     }
 }
 

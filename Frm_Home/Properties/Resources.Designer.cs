@@ -63,6 +63,16 @@ namespace Frm_TorneoPRO.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap campeon {
+            get {
+                object obj = ResourceManager.GetObject("campeon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap fondo_02 {
             get {
                 object obj = ResourceManager.GetObject("fondo_02", resourceCulture);
@@ -96,6 +106,26 @@ namespace Frm_TorneoPRO.Properties {
         public static System.Drawing.Bitmap pngaaa_com_1190514 {
             get {
                 object obj = ResourceManager.GetObject("pngaaa_com_1190514", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pulgarArriba {
+            get {
+                object obj = ResourceManager.GetObject("pulgarArriba", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap simulador {
+            get {
+                object obj = ResourceManager.GetObject("simulador", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

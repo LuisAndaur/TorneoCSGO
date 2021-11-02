@@ -14,7 +14,7 @@ namespace Frm_TorneoPRO
 {
     public partial class Frm_Administrador : Form
     {
-        List<Jugador> listaJugadores = new List<Jugador>();
+        List<Jugador> listaJugadores = new List<Jugador>();        
         Jugador auxJugador = new Jugador();
         private int indice = 0;
 
@@ -85,7 +85,7 @@ namespace Frm_TorneoPRO
             else
             {
                 MessageBox.Show("Seleccione el jugador que quiere editar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }            
+            }
         }
 
         /// <summary>
@@ -93,8 +93,31 @@ namespace Frm_TorneoPRO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// <exception cref="Exception_EliminarJugador">Error si no se puedo eliminar el jugador</exception>
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (auxJugador.NroJugador > 0)
+                {
+                    TorneoPro.EliminarJugador(auxJugador);
+                    Frm_Mensaje mensaje = new Frm_Mensaje("Jugador eliminado\nEXITOSAMENTE!");
+                    mensaje.ShowDialog();
+                    RecargarListaJugadores();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione el jugador que quiere eliminar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception_EliminarJugador eEliminar)
+            {
+                MessageBox.Show(eEliminar.Message, "Error al intentar eliminar un jugador", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception auxEx)
+            {
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
