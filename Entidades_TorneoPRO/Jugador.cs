@@ -161,7 +161,7 @@ namespace Entidades_TorneoPRO
         /// </summary>
         public Jugador()
         {
-
+            this.eJugador = new Estadistica();
         }
 
         /// <summary>

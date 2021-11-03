@@ -13,7 +13,7 @@ namespace Entidades_TorneoPRO
         /// <summary>
         /// Rstadistica Mapas
         /// </summary>
-        public Estadistica CantidadBombas
+        public Estadistica Estadistica
         {
             get { return eBomba; }
             set { this.eBomba = value; }

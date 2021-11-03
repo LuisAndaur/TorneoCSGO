@@ -53,7 +53,27 @@ namespace Frm_TorneoPRO
         /// <param name="e"></param>
         private void btn_SimularTorneo_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (!flagSimulacion)
+                {
+                    Partida fullPartidas = new Partida();
+                    fullPartidas.SimularPartidas();
+                    Frm_Simulador simular = new Frm_Simulador();
+                    simular.ShowDialog();
+                    flagSimulacion = true;
+                }
+                else
+                {
+                    MessageBox.Show("Ya se simuló el torneo", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            
         }
 
         /// <summary>

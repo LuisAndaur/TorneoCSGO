@@ -16,5 +16,8 @@
     <Compile Update="Frm_ModalABM.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Frm_Simulador.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

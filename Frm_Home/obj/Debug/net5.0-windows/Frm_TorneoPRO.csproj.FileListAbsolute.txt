@@ -73,4 +73,4 @@ C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0
 C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.pdb
 C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.genruntimeconfig.cache
 C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Mensaje.resources
-C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.csproj.CopyComplete
+C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Simulador.resources
