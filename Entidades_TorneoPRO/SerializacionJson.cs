@@ -76,19 +76,19 @@ namespace Entidades_TorneoPRO
 
         public static T LeerInicial(string nombre)
         {
-            path = $"{Environment.CurrentDirectory}\\{nombre}";
+            string path2 = $"{Environment.CurrentDirectory}\\{nombre}";
             string info = string.Empty;
             string informacionRecuperada = string.Empty;
             T datosRecuperados = default;
             try
             {
-                info = File.ReadAllText(path);
+                info = File.ReadAllText(path2);
                 datosRecuperados = JsonSerializer.Deserialize<T>(info);
                 return datosRecuperados;
             }
             catch (Exception e)
             {
-                throw new Exception_SerializacionJson($"Error en el archivo ubicado en {path}", e);
+                throw new Exception_SerializacionJson($"Error en el archivo ubicado en {path2}", e);
             }
 
         }

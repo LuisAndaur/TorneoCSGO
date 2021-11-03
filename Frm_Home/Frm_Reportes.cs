@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades_TorneoPRO;
 
 namespace Frm_TorneoPRO
 {
@@ -27,6 +28,30 @@ namespace Frm_TorneoPRO
             this.Close();
         }
 
-        
+        private void btn_Campeon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SerializacionJson<Jugador>.Escribir(Jugador.Campeon(), "CampeonDelTorneo");
+                Archivo.Escribir(Jugador.Campeon().ToString(), "CampeonDelTorneo");
+                SerializacionXml<Jugador>.Escribir(Jugador.Campeon(), "CampeonDelTorneo");
+            }
+            catch (Exception_SerializacionJson eSerializacion)
+            {
+                MessageBox.Show(eSerializacion.Message, "ERROR al cargar la lista json", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception auxEx)
+            {
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void btn_EstadisticaJugadores_Click(object sender, EventArgs e)
+        {
+            Archivo.Escribir(TorneoPro.Imprimir(TorneoPro.ListaJugadores), "EstadisticasJugadores");
+            SerializacionJson<List<Jugador>>.Escribir(TorneoPro.ListaJugadores, "jugarJson");
+        }
     }
 }

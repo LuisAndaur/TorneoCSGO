@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Entidades_TorneoPRO
 {
@@ -141,6 +142,8 @@ namespace Entidades_TorneoPRO
         /// </summary>
         /// <param name="numero"></param>
         /// <returns>True si existe el numero o false si no</returns>
+        /// 
+
         public static bool ExisteJugador(int numero)
         {
             foreach (Jugador item in listaJugadores)
@@ -151,7 +154,7 @@ namespace Entidades_TorneoPRO
                 }
             }
             return false;
-        }
+        }        
 
         /// <summary>
         /// Agrega un jugador a la lista si cumple las caracteristicas
@@ -234,5 +237,24 @@ namespace Entidades_TorneoPRO
                 throw new Exception_EliminarJugador();
             }
         }
+
+        /// <summary>
+        /// Imprime listas
+        /// </summary>
+        /// <param name="lista"></param>
+        /// <returns>La lista como string</returns>
+        public static string Imprimir(List<Jugador> lista)
+        {
+            StringBuilder jugador = new StringBuilder();
+
+            foreach (Jugador item in lista)
+            {
+                jugador.AppendLine(item.ToString());
+            }
+
+            return jugador.ToString();
+        }
+
+
     }
 }

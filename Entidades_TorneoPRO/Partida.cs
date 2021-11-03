@@ -16,6 +16,8 @@ namespace Entidades_TorneoPRO
         private int kills;
         private int muertes;
 
+        public static List<Jugador> Jugadores { get { return TorneoPro.ListaJugadores; } }
+
         public Partida()
         {
             this.listaJugadores = TorneoPro.ListaJugadores;
@@ -90,6 +92,30 @@ namespace Entidades_TorneoPRO
         public int RehenesRescatados()
         {
             return random.Next(0, 3);
-        }        
+        }
+
+        //public override string ToString()
+        //{
+        //    StringBuilder jugador = new StringBuilder();
+
+        //    foreach (Jugador item in listaJugadores)
+        //    {
+        //        jugador.AppendLine($"Nro: {item.NroJugador}");
+        //        jugador.AppendLine($"Nombre: {item.Nombre}");
+        //        jugador.AppendLine($"Genero: {item.Genero}");
+        //        jugador.AppendLine($"Nacionalidad: {item.Nacionalidad}");
+        //        jugador.AppendLine($"Especialidad: {item.Especialidad}");
+        //        jugador.AppendLine($"Primer Torneo: {item.PrimerTorneo}");
+        //        jugador.AppendLine($"Puntos: {item.Estadistica.Puntos}");
+        //        jugador.Append($" Kills: {item.Estadistica.Kills}");
+        //        jugador.Append($" Muertes: {item.Estadistica.Muerte}");
+        //        jugador.Append($" Headshot: {item.Estadistica.Headshot}");
+        //        jugador.Append($" Bomba: {item.Estadistica.Bombas}");
+        //        jugador.AppendLine($" Rehenes: {item.Estadistica.Rehenes}");
+        //        jugador.AppendLine($"--------------------------------------");
+        //    }
+
+        //    return jugador.ToString();
+        //}
     }
 }

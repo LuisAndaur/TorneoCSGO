@@ -17,9 +17,9 @@ namespace Entidades_TorneoPRO
             path += @"\Archivos-Serializacion\";
         }
 
-        public static void Escribir(string datos)
+        public static void Escribir(string datos, string nombre)
         {
-            string nombreArchivo = path + "Archivos_01_" + DateTime.Now.ToString("HH_mm_ss") + ".txt";
+            string nombreArchivo = $"{path}{nombre}_{DateTime.Now.ToString("HH_mm_ss")}.txt";
             try
             {
                 if (!Directory.Exists(path))
@@ -29,11 +29,10 @@ namespace Entidades_TorneoPRO
 
                 using (StreamWriter sw = new StreamWriter(nombreArchivo))
                 {
-                    datos += "\nejemplo numero 1";
                     sw.WriteLine(datos);
-                    sw.WriteLine("\n-----------------------------");
-                    sw.WriteLine("\nlA FECHA ES: ");
+                    sw.WriteLine("La fecha es: ");
                     sw.WriteLine(DateTime.Now.ToString());
+                    sw.WriteLine("-----------------------------");
 
                 }
 

@@ -186,7 +186,45 @@ namespace Entidades_TorneoPRO
             this.eJugador = new Estadistica();
         }
 
-        
+        /// <summary>
+        /// Calcula el jugador con mas puntos
+        /// </summary>
+        /// <returns>El jugador con mas puntos</returns>
+        public static Jugador Campeon()
+        {
+            Jugador auxJugador = new Jugador();
+            int maximo = -5000;
+            foreach (Jugador item in TorneoPro.ListaJugadores)
+            {
+                if (item.Estadistica.Puntos > maximo)
+                {
+                    maximo = item.Estadistica.Puntos;
+                    auxJugador = item;
+                }
+            }
+            return auxJugador;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder jugador = new StringBuilder();
+            jugador.AppendLine($"Nro: {this.NroJugador}");
+            jugador.AppendLine($"Nombre: {this.Nombre}");
+            jugador.AppendLine($"Genero: {this.Genero}");
+            jugador.AppendLine($"Nacionalidad: {this.Nacionalidad}");
+            jugador.AppendLine($"Especialidad: {this.Especialidad}");
+            jugador.AppendLine($"Primer Torneo: {this.PrimerTorneo}");
+            jugador.AppendLine($"Puntos: {this.eJugador.Puntos}");
+            jugador.Append($"Kills: {this.eJugador.Kills}");
+            jugador.Append($" Muertes: {this.eJugador.Muerte}");
+            jugador.Append($" Headshot: {this.eJugador.Headshot}");
+            jugador.Append($" Bombas: {this.eJugador.Bombas}");
+            jugador.AppendLine($" Rehenes: {this.eJugador.Rehenes}");
+            jugador.AppendLine($"--------------------------------------");
+            return jugador.ToString();
+        }
+
 
     }
+
 }

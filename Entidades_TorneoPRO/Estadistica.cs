@@ -46,6 +46,14 @@ namespace Entidades_TorneoPRO
         public int Rehenes { get { return this.rehenes; } }
 
         /// <summary>
+        /// Constructor por defecto de estadistica
+        /// </summary>
+        public Estadistica()
+        {
+
+        }
+
+        /// <summary>
         /// Acumula los puntos por partida y las estadisticas
         /// </summary>
         /// <param name="kills">kills hechas</param>
@@ -63,7 +71,7 @@ namespace Entidades_TorneoPRO
             this.bomba += bombas;
             this.rehenes += rehenes;
 
-            acumuladorPuntos = (kills + (headshot * 2) + (bombas*3) + (rehenes*3)) - (muertes*3);
+            acumuladorPuntos = (kills + (headshot * 2) + (bombas*3) + (rehenes*3)) - (muertes*2);
             this.puntos += acumuladorPuntos;
         }
 

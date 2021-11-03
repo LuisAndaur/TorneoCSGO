@@ -18,9 +18,9 @@ namespace Entidades_TorneoPRO
             path += @"\Archivos-Serializacion\";
         }
 
-        public static void Escribir(T datos)
+        public static void Escribir(T datos, string nombre)
         {
-            string nombreArchivo = path + "SerializacionXml_01_" + DateTime.Now.ToString("HH_mm_ss") + ".xml";
+            string nombreArchivo = path + "SerializacionXml_"+nombre+"_" + DateTime.Now.ToString("HH_mm_ss") + ".xml";
             try
             {
                 if (!Directory.Exists(path))

@@ -34,7 +34,6 @@ C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\bin\Debug\net5.0-window
 C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\bin\Debug\net5.0-windows\Entidades_TorneoPRO.pdb
 C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.csproj.AssemblyReference.cache
 C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Administrador.resources
-C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Estadistica.resources
 C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Home.resources
 C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_ModalABM.resources
 C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Properties.Resources.resources
@@ -74,3 +73,6 @@ C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0
 C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Mensaje.resources
 C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Simulador.resources
 C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Reportes.resources
+C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Mensaje.resources
+C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Reportes.resources
+C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Simulador.resources
