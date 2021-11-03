@@ -68,32 +68,32 @@ namespace Frm_TorneoPRO
                     MessageBox.Show("Ya se simuló el torneo", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch (Exception)
+            catch (Exception auxEx)
             {
 
-                throw;
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
 
         /// <summary>
-        /// Lanza un form con las estadisticas del torneo
+        /// Lanza un form con los reportes del torneo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_Estadisticas_Click(object sender, EventArgs e)
+        private void btn_Reportes_Click(object sender, EventArgs e)
         {
             if (flagSimulacion)
             {
-                Frm_Estadistica estadistica = new Frm_Estadistica();
+                Frm_Reportes estadistica = new Frm_Reportes();
                 this.Hide();
                 estadistica.ShowDialog();
                 this.Show();
             }
             else
             {
-                MessageBox.Show("Debe simular el torneo antes de ver las estadisticas", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }            
+                MessageBox.Show("Debe simular el torneo antes de ver los reportes", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         /// <summary>
@@ -126,12 +126,6 @@ namespace Frm_TorneoPRO
         {
             sonidoEntradaCarga = new SoundPlayer($"{Environment.CurrentDirectory}\\csSound.wav");
             sonidoEntradaCarga.PlayLooping();
-        }
-
-        public static void SonidoSimularPartida()
-        {
-            SoundPlayer simulacion = new SoundPlayer($"{Environment.CurrentDirectory}\\simularpartida.wav");
-            simulacion.Play();
         }
 
         

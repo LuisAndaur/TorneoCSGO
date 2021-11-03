@@ -34,7 +34,7 @@ namespace Frm_TorneoPRO
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btn_AdministrarJugadores = new System.Windows.Forms.Button();
-            this.btn_Estadisticas = new System.Windows.Forms.Button();
+            this.btn_Reportes = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.btn_SimularTorneo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,22 +89,22 @@ namespace Frm_TorneoPRO
             this.btn_AdministrarJugadores.UseVisualStyleBackColor = false;
             this.btn_AdministrarJugadores.Click += new System.EventHandler(this.btn_AdministrarJugadores_Click);
             // 
-            // btn_Estadisticas
+            // btn_Reportes
             // 
-            this.btn_Estadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.btn_Estadisticas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.btn_Estadisticas.FlatAppearance.BorderSize = 2;
-            this.btn_Estadisticas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
-            this.btn_Estadisticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.btn_Estadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Estadisticas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Estadisticas.Location = new System.Drawing.Point(53, 461);
-            this.btn_Estadisticas.Name = "btn_Estadisticas";
-            this.btn_Estadisticas.Size = new System.Drawing.Size(214, 35);
-            this.btn_Estadisticas.TabIndex = 1;
-            this.btn_Estadisticas.Text = "Estadisticas";
-            this.btn_Estadisticas.UseVisualStyleBackColor = false;
-            this.btn_Estadisticas.Click += new System.EventHandler(this.btn_Estadisticas_Click);
+            this.btn_Reportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
+            this.btn_Reportes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btn_Reportes.FlatAppearance.BorderSize = 2;
+            this.btn_Reportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btn_Reportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.btn_Reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Reportes.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Reportes.Location = new System.Drawing.Point(53, 461);
+            this.btn_Reportes.Name = "btn_Reportes";
+            this.btn_Reportes.Size = new System.Drawing.Size(214, 35);
+            this.btn_Reportes.TabIndex = 1;
+            this.btn_Reportes.Text = "Reportes";
+            this.btn_Reportes.UseVisualStyleBackColor = false;
+            this.btn_Reportes.Click += new System.EventHandler(this.btn_Reportes_Click);
             // 
             // btn_Salir
             // 
@@ -148,7 +148,7 @@ namespace Frm_TorneoPRO
             this.ClientSize = new System.Drawing.Size(840, 595);
             this.Controls.Add(this.btn_SimularTorneo);
             this.Controls.Add(this.btn_Salir);
-            this.Controls.Add(this.btn_Estadisticas);
+            this.Controls.Add(this.btn_Reportes);
             this.Controls.Add(this.btn_AdministrarJugadores);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -175,7 +175,7 @@ namespace Frm_TorneoPRO
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btn_AdministrarJugadores;
-        private System.Windows.Forms.Button btn_Estadisticas;
+        private System.Windows.Forms.Button btn_Reportes;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btn_SimularTorneo;
     }

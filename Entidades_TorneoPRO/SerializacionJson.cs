@@ -22,7 +22,7 @@ namespace Entidades_TorneoPRO
 
         public static void Escribir(T datos, string nombre)
         {
-            string nombreArchivo = path + "SerializandoJson_" + nombre + ".js";
+            string nombreArchivo = path + "SerializandoJson_" + nombre + ".json";
 
             try
             {

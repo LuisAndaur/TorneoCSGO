@@ -12,6 +12,9 @@ namespace Frm_TorneoPRO
 {
     public partial class Frm_Simulador : Form
     {
+        /// <summary>
+        /// Constructor que inicializa los componentes
+        /// </summary>
         public Frm_Simulador()
         {
             InitializeComponent();
@@ -19,6 +22,11 @@ namespace Frm_TorneoPRO
             pbr_Simulador.Value = 0;
         }
 
+        /// <summary>
+        /// Evento Tick del timer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tmr_Simulacion_Tick(object sender, EventArgs e)
         {
             this.pbr_Simulador.Increment(10);
