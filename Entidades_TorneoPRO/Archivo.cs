@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades_TorneoPRO
 {
-    public class Archivo
+    public class Archivo<T>
     {
         static string path;
 
@@ -15,35 +15,12 @@ namespace Entidades_TorneoPRO
         {
             path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             path += @"\Archivos-Serializacion\";
-        }
+        }               
 
-        public static void Escribir(string datos, string nombre)
-        {
-            string nombreArchivo = $"{path}{nombre}_{DateTime.Now.ToString("HH_mm_ss")}.txt";
-            try
-            {
-                if (!Directory.Exists(path))
-                {
-                    Directory.CreateDirectory(path);
-                }
-
-                using (StreamWriter sw = new StreamWriter(nombreArchivo))
-                {
-                    sw.WriteLine(datos);
-                    sw.WriteLine("La fecha es: ");
-                    sw.WriteLine(DateTime.Now.ToString());
-                    sw.WriteLine("-----------------------------");
-
-                }
-
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Error en el archivo ubicado en {path}", e);
-            }
-        }
-
-
+        /// <summary>
+        /// Toma datos desde un archivo txt
+        /// </summary>
+        /// <returns>datos obtenidos</returns>
         public static string Leer()
         {
             string archivo = string.Empty;
@@ -53,7 +30,6 @@ namespace Entidades_TorneoPRO
 
                 if (Directory.Exists(path))
                 {
-                    // recupera los nombres de los archivos que hay en esa carpeta incluida la ruta
                     string[] archivosEnElPath = Directory.GetFiles(path);
                     foreach (string path in archivosEnElPath)
                     {
@@ -70,7 +46,6 @@ namespace Entidades_TorneoPRO
                         using (StreamReader sr = new StreamReader(archivo))
                         {
                             string line;
-                            // Lee y muestra lineas desde el archivo hasta el fin del mismo.
 
                             while ((line = sr.ReadLine()) != null)
                             {
@@ -88,6 +63,49 @@ namespace Entidades_TorneoPRO
                 throw new Exception($"Error en el archivo ubicado en {path}", e);
             }
 
+        }
+
+        /// <summary>
+        /// Escribe datos a un archivo txt
+        /// </summary>
+        /// <param name="datos">datos a guardar</param>
+        /// <param name="path">ruta donde se guarda</param>
+        public static void Escribir(T datos, string path)
+        {
+            try
+            {        
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.WriteLine(datos);
+                    sw.WriteLine("La fecha es: ");
+                    sw.WriteLine(DateTime.Now.ToString());
+                    sw.WriteLine("-----------------------------");
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Error en el archivo ubicado en {path}", e);
+            }
+        }
+
+        public static void EscribirLista(string datos, string path)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.WriteLine(datos);
+                    sw.WriteLine("La fecha es: ");
+                    sw.WriteLine(DateTime.Now.ToString());
+                    sw.WriteLine("-----------------------------");
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Error en el archivo ubicado en {path}", e);
+            }
         }
     }
 }

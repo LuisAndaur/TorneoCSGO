@@ -18,6 +18,11 @@ namespace Entidades_TorneoPRO
             path += @"\Archivos-Serializacion\";
         }
 
+        /// <summary>
+        /// Serializa en un directorio predefinido
+        /// </summary>
+        /// <param name="datos">datos a serilizar</param>
+        /// <param name="nombre">nombre del archivo</param>
         public static void Escribir(T datos, string nombre)
         {
             string nombreArchivo = path + "SerializacionXml_"+nombre+"_" + DateTime.Now.ToString("HH_mm_ss") + ".xml";
@@ -41,7 +46,31 @@ namespace Entidades_TorneoPRO
             }
         }
 
+        /// <summary>
+        /// Serializa con el nombre y path determinado por el usuario
+        /// </summary>
+        /// <param name="datos">dato a guardar</param>
+        /// <param name="path">Ruta donde guardar</param>
+        public static void Escribir2(T datos, string path)
+        {
+            try
+            {
+                using (StreamWriter streamWriter = new StreamWriter(path))
+                {
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+                    xmlSerializer.Serialize(streamWriter, datos);
+                }
+            }
+            catch (Exception_SerializacionXml eXml)
+            {
+                throw new Exception_SerializacionXml($"Error en el archivo ubicado en {path}", eXml);
+            }
+        }
 
+        /// <summary>
+        /// Deserializa los datos en una ruta especifica
+        /// </summary>
+        /// <returns></returns>
         public static T Leer()
         {
             string archivo = string.Empty;
@@ -52,7 +81,6 @@ namespace Entidades_TorneoPRO
 
                 if (Directory.Exists(path))
                 {
-                    // recupera los nombres de los archivos que hay en esa carpeta incluida la ruta
                     string[] archivosEnElPath = Directory.GetFiles(path);
                     foreach (string path in archivosEnElPath)
                     {

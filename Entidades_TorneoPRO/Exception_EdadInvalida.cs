@@ -8,11 +8,11 @@ namespace Entidades_TorneoPRO
 {
     public class Exception_EdadInvalida : Exception
     {
-        private string mensajeError;
+
 
         public Exception_EdadInvalida() : base()
         {
-            this.mensajeError = "Edad fuera de rango permitido";
+
         }
 
         public Exception_EdadInvalida(string message, Exception innerException) : base(message, innerException)

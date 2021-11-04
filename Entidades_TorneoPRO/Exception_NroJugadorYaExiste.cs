@@ -8,11 +8,10 @@ namespace Entidades_TorneoPRO
 {
     public class Exception_NroJugadorYaExiste : Exception
     {
-        private string mensajeError;
 
         public Exception_NroJugadorYaExiste() : base()
         {
-            this.mensajeError = "El nro de jugador ya existe";
+
         }
 
         public Exception_NroJugadorYaExiste(string message, Exception innerException) : base(message, innerException)
