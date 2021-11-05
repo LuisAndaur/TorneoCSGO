@@ -8,10 +8,6 @@ namespace Entidades_TorneoPRO
 {
     public class Partida : IAwp, IBomba, IRehenes
     {
-        private List<Jugador> listaJugadores = new List<Jugador>();
-        private List<Deathmatch> mapasDeathmatch = new List<Deathmatch>();
-        private List<Bomba> mapasBomba = new List<Bomba>();
-        private List<Rehenes> mapasRehenes = new List<Rehenes>();
         Random random;
         private int kills;
         private int muertes;
@@ -21,21 +17,17 @@ namespace Entidades_TorneoPRO
         /// </summary>
         public Partida()
         {
-            this.listaJugadores = TorneoPro.ListaJugadores;
-            this.mapasDeathmatch = TorneoPro.MapasDeathmatch;
-            this.mapasBomba = TorneoPro.MapasBomba;
-            this.mapasRehenes = TorneoPro.MapasRehenes;
             random = new Random();
         }
 
         /// <summary>
         /// Simula todas las partidas del torneo
         /// </summary>
-        public void SimularPartidas()
+        public void SimularPartidas(List<Jugador> lista)
         {
-            foreach (Bomba mBomba in mapasBomba)
+            foreach (Bomba mBomba in TorneoPro.MapasBomba)
             {
-                foreach (Jugador auxJugador in listaJugadores)
+                foreach (Jugador auxJugador in lista)
                 {
                     kills = random.Next(0, 30);
                     muertes = random.Next(0, 30);
@@ -44,9 +36,9 @@ namespace Entidades_TorneoPRO
                 }                
             }
 
-            foreach (Deathmatch mDeathmatch in mapasDeathmatch)
+            foreach (Deathmatch mDeathmatch in TorneoPro.MapasDeathmatch)
             {
-                foreach (Jugador auxJugador in listaJugadores)
+                foreach (Jugador auxJugador in lista)
                 {
                     kills = random.Next(0, 30);
                     muertes = random.Next(0, 30);
@@ -55,9 +47,9 @@ namespace Entidades_TorneoPRO
                 }
             }
 
-            foreach (Rehenes mRehenes in mapasRehenes)
+            foreach (Rehenes mRehenes in TorneoPro.MapasRehenes)
             {
-                foreach (Jugador auxJugador in listaJugadores)
+                foreach (Jugador auxJugador in lista)
                 {
                     kills = random.Next(0, 30);
                     muertes = random.Next(0, 30);

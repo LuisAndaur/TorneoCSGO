@@ -54,6 +54,27 @@ namespace Entidades_TorneoPRO
         }
 
         /// <summary>
+        /// Constructor con parametros
+        /// </summary>
+        /// <param name="puntos">puntos obtenidos</param>
+        /// <param name="kills">muertes ocasionadas</param>
+        /// <param name="muertes">muertes recibidas</param>
+        /// <param name="headshot">headshot hechos</param>
+        /// <param name="bomba">bombas plantadas</param>
+        /// <param name="rehenes">rehenes rescatados</param>
+        public Estadistica(int puntos, int kills, int muertes, int headshot, int bomba, int rehenes) : this()
+        {
+            this.puntos = puntos;
+            this.kills = kills;
+            this.muertes = muertes;
+            this.headshot = headshot;
+            this.bomba = bomba;
+            this.rehenes = rehenes;
+        }
+
+
+
+        /// <summary>
         /// Acumula los puntos por partida y las estadisticas
         /// </summary>
         /// <param name="kills">kills hechas</param>

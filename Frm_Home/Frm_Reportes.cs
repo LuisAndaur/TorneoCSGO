@@ -58,7 +58,7 @@ namespace Frm_TorneoPRO
         {
             try
             {
-                GuardarComo(Jugador.Campeon());
+                GuardarComo(Jugador.Campeon(TorneoPro.ListaJugadores));
                 Mensaje();
             }
             catch (Exception_Archivo eArchivo)
@@ -91,7 +91,7 @@ namespace Frm_TorneoPRO
         {            
             try
             {
-                GuardarComo(TorneoPro.ListaJugadores);
+                GuardarComo(Jugador.PorPuntos(TorneoPro.ListaJugadores));
                 Mensaje();
             }
             catch (Exception_Archivo eArchivo)
@@ -124,7 +124,7 @@ namespace Frm_TorneoPRO
         {
             try
             {
-                
+                GuardarComo(Jugador.MasKills(TorneoPro.ListaJugadores));
                 Mensaje();
             }
             catch (Exception_Archivo eArchivo)
@@ -157,7 +157,7 @@ namespace Frm_TorneoPRO
         {
             try
             {
-
+                GuardarComo(Jugador.MasMancos(TorneoPro.ListaJugadores));
                 Mensaje();
             }
             catch (Exception_Archivo eArchivo)
@@ -190,7 +190,7 @@ namespace Frm_TorneoPRO
         {
             try
             {
-
+                GuardarComo(Jugador.ListaPrimerTorneo(TorneoPro.ListaJugadores));
                 Mensaje();
             }
             catch (Exception_Archivo eArchivo)
@@ -223,7 +223,7 @@ namespace Frm_TorneoPRO
         {
             try
             {
-
+                GuardarComo(Jugador.Bombarderos(TorneoPro.ListaJugadores));
                 Mensaje();
             }
             catch (Exception_Archivo eArchivo)
@@ -256,7 +256,7 @@ namespace Frm_TorneoPRO
         {
             try
             {
-
+                GuardarComo(Jugador.Rescatistas(TorneoPro.ListaJugadores));
                 Mensaje();
             }
             catch (Exception_Archivo eArchivo)
@@ -289,7 +289,7 @@ namespace Frm_TorneoPRO
         {
             try
             {
-
+                GuardarComo(Jugador.XxlHeadshots(TorneoPro.ListaJugadores));
                 Mensaje();
             }
             catch (Exception_Archivo eArchivo)
@@ -322,7 +322,7 @@ namespace Frm_TorneoPRO
         {
             try
             {
-
+                GuardarComo(Jugador.MasJoven(TorneoPro.ListaJugadores));
                 Mensaje();
             }
             catch (Exception_Archivo eArchivo)

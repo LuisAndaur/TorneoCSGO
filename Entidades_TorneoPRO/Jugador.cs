@@ -190,11 +190,11 @@ namespace Entidades_TorneoPRO
         /// Calcula el jugador con mas puntos
         /// </summary>
         /// <returns>El jugador con mas puntos</returns>
-        public static Jugador Campeon()
+        public static Jugador Campeon(List<Jugador> lista)
         {
             Jugador auxJugador = new Jugador();
             int maximo = -5000;
-            foreach (Jugador item in TorneoPro.ListaJugadores)
+            foreach (Jugador item in lista)
             {
                 if (item.Estadistica.Puntos > maximo)
                 {
@@ -214,21 +214,176 @@ namespace Entidades_TorneoPRO
             StringBuilder jugador = new StringBuilder();
             jugador.AppendLine($"Nro: {this.NroJugador}");
             jugador.AppendLine($"Nombre: {this.Nombre}");
+            jugador.AppendLine($"Edad: {this.Edad}");
             jugador.AppendLine($"Genero: {this.Genero}");
             jugador.AppendLine($"Nacionalidad: {this.Nacionalidad}");
             jugador.AppendLine($"Especialidad: {this.Especialidad}");
             jugador.AppendLine($"Primer Torneo: {this.PrimerTorneo}");
             jugador.AppendLine($"Puntos: {this.eJugador.Puntos}");
             jugador.Append($"Kills: {this.eJugador.Kills}");
-            jugador.Append($" Muertes: {this.eJugador.Muerte}");
-            jugador.Append($" Headshot: {this.eJugador.Headshot}");
-            jugador.Append($" Bombas: {this.eJugador.Bombas}");
-            jugador.AppendLine($" Rehenes: {this.eJugador.Rehenes}");
-            jugador.AppendLine($"--------------------------------------");
+            jugador.Append($" | Muertes: {this.eJugador.Muerte}");
+            jugador.Append($" | Headshot: {this.eJugador.Headshot}");
+            jugador.Append($" | Bombas: {this.eJugador.Bombas}");
+            jugador.AppendLine($" | Rehenes: {this.eJugador.Rehenes}");
+            jugador.Append($"-----------------------------------------------------------------");
             return jugador.ToString();
         }
 
+        /// <summary>
+        /// Lista ordenada por puntos obtenidos
+        /// </summary>
+        /// <returns>lista total desde el mejor al mas manco</returns>
+        public static List<Jugador> PorPuntos(List<Jugador> lista)
+        {
+            List<Jugador> auxlista1 = new List<Jugador>();
 
+            auxlista1 = lista;
+            auxlista1 = auxlista1.OrderByDescending(x => x.Estadistica.Puntos).ToList();
+
+            return auxlista1;
+        }
+
+        /// <summary>
+        /// Top 5 mejores asesinos del torneo
+        /// </summary>
+        /// <returns>lista con los mejores asesinos</returns>
+        public static List<Jugador> MasKills(List<Jugador> lista)
+        {
+            List<Jugador> auxlista1 = new List<Jugador>();
+            List<Jugador> auxlista2 = new List<Jugador>();
+
+            auxlista2 = lista;
+            auxlista2 = auxlista2.OrderByDescending(x => x.Estadistica.Kills).ToList();
+
+            for (int i = 0; i < 5; i++)
+            {
+                auxlista1.Add(auxlista2[i]);
+            }
+
+            return auxlista1;
+        }
+
+        /// <summary>
+        /// Top 5 peores jugadores del torneo
+        /// </summary>
+        /// <returns>lista con los peores jugadores</returns>
+        public static List<Jugador> MasMancos(List<Jugador> lista)
+        {
+            List<Jugador> auxlista1 = new List<Jugador>();
+            List<Jugador> auxlista2 = new List<Jugador>();
+
+            auxlista2 = lista;
+            auxlista2 = auxlista2.OrderByDescending(x => x.Estadistica.Muerte).ToList();
+
+            for (int i = 0; i < 5; i++)
+            {
+                auxlista1.Add(auxlista2[i]);
+            }
+
+            return auxlista1;
+        }
+
+        /// <summary>
+        /// Jugadores que juegan su primer torneo
+        /// </summary>
+        /// <returns>lista con los jugadores que juegan su primer torneo</returns>
+        public static List<Jugador> ListaPrimerTorneo(List<Jugador> lista)
+        {
+            List<Jugador> auxlista1 = new List<Jugador>();
+            List<Jugador> auxlista2 = lista;
+
+            foreach (Jugador item in auxlista2)
+            {
+                if (item.PrimerTorneo)
+                {
+                    auxlista1.Add(item);
+                }
+            }
+
+            return auxlista1;
+        }
+
+        /// <summary>
+        /// Top 5 mayores plantadores de bomba del torneo
+        /// </summary>
+        /// <returns>lista con los mayores plantadores de bombas</returns>
+        public static List<Jugador> Bombarderos(List<Jugador> lista)
+        {
+            List<Jugador> auxlista1 = new List<Jugador>();
+            List<Jugador> auxlista2 = new List<Jugador>();
+
+            auxlista2 = lista;
+            auxlista2 = auxlista2.OrderByDescending(x => x.Estadistica.Bombas).ToList();
+
+            for (int i = 0; i < 5; i++)
+            {
+                auxlista1.Add(auxlista2[i]);
+            }
+
+            return auxlista1;
+        }
+
+        /// <summary>
+        /// Top 5 mayores rescatistas de rehenes del torneo
+        /// </summary>
+        /// <returns>lista con losmayores rescatistas de rehenes</returns>
+        public static List<Jugador> Rescatistas(List<Jugador> lista)
+        {
+            List<Jugador> auxlista1 = new List<Jugador>();
+            List<Jugador> auxlista2 = new List<Jugador>();
+
+            auxlista2 = lista;
+            auxlista2 = auxlista2.OrderByDescending(x => x.Estadistica.Bombas).ToList();
+
+            for (int i = 0; i < 5; i++)
+            {
+                auxlista1.Add(auxlista2[i]);
+            }
+
+            return auxlista1;
+        }
+
+        /// <summary>
+        /// Jugadores XXL mayores headshots del torneo
+        /// </summary>
+        /// <returns>lista con los jugadores XXL mayores headshots</returns>
+        public static List<Jugador> XxlHeadshots(List<Jugador> lista)
+        {
+            List<Jugador> auxlista1 = new List<Jugador>();
+            List<Jugador> auxlista2 = new List<Jugador>();
+
+            auxlista2 = lista;
+            auxlista2 = auxlista2.OrderByDescending(x => x.Estadistica.Headshot).ToList();
+
+            foreach (Jugador item in auxlista2)
+            {
+                if (item.Especialidad == "XXL")
+                {
+                    auxlista1.Add(item);
+                }
+            }
+
+            return auxlista1;
+        }
+
+        /// <summary>
+        /// Calcula el jugador mas joven del torneo
+        /// </summary>
+        /// <returns>El jugador mas joven</returns>
+        public static Jugador MasJoven(List<Jugador> lista)
+        {
+            Jugador auxJugador = new Jugador();
+            int minimo = 100;
+            foreach (Jugador item in lista)
+            {
+                if (item.Edad < minimo)
+                {
+                    minimo = item.Edad;
+                    auxJugador = item;
+                }
+            }
+            return auxJugador;
+        }
     }
 
 }

@@ -59,7 +59,7 @@ namespace Frm_TorneoPRO
                 if (!flagSimulacion)
                 {
                     Partida fullPartidas = new Partida();
-                    fullPartidas.SimularPartidas();
+                    fullPartidas.SimularPartidas(TorneoPro.ListaJugadores);
                     Frm_Simulador simular = new Frm_Simulador();
                     simular.ShowDialog();
                     flagSimulacion = true;
