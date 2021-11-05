@@ -16,42 +16,14 @@ namespace Entidades_TorneoPRO
         {
             path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             path += @"\Archivos-Serializacion\";
-        }
-
-        /// <summary>
-        /// Serializa en un directorio predefinido
-        /// </summary>
-        /// <param name="datos">datos a serilizar</param>
-        /// <param name="nombre">nombre del archivo</param>
-        public static void Escribir(T datos, string nombre)
-        {
-            string nombreArchivo = path + "SerializacionXml_"+nombre+"_" + DateTime.Now.ToString("HH_mm_ss") + ".xml";
-            try
-            {
-                if (!Directory.Exists(path))
-                {
-                    Directory.CreateDirectory(path);
-                }
-
-                using (StreamWriter streamWriter = new StreamWriter(nombreArchivo))
-                {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
-                    xmlSerializer.Serialize(streamWriter, datos);
-                }
-
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Error en el archivo ubicado en {path}", e);
-            }
-        }
+        }        
 
         /// <summary>
         /// Serializa con el nombre y path determinado por el usuario
         /// </summary>
         /// <param name="datos">dato a guardar</param>
         /// <param name="path">Ruta donde guardar</param>
-        public static void Escribir2(T datos, string path)
+        public static void Escribir(T datos, string path)
         {
             try
             {

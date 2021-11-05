@@ -205,6 +205,10 @@ namespace Entidades_TorneoPRO
             return auxJugador;
         }
 
+        /// <summary>
+        /// Sobrecarga metodo toString
+        /// </summary>
+        /// <returns>Objeto como string</returns>
         public override string ToString()
         {
             StringBuilder jugador = new StringBuilder();

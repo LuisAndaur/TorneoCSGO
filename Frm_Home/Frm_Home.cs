@@ -51,6 +51,7 @@ namespace Frm_TorneoPRO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// <exception cref="Exception">Error si no se pudo simular</exception>
         private void btn_SimularTorneo_Click(object sender, EventArgs e)
         {
             try

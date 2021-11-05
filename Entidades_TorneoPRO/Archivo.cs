@@ -89,7 +89,12 @@ namespace Entidades_TorneoPRO
             }
         }
 
-        public static void EscribirLista(string datos, string path)
+        /// <summary>
+        /// Escribe datos a un archivo txt
+        /// </summary>
+        /// <param name="datos">datos recibidos como string</param>
+        /// <param name="path">ruta donde se guarda</param>
+        public static void Escribir(string datos, string path)
         {
             try
             {

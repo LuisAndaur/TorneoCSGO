@@ -48,11 +48,15 @@ namespace Frm_TorneoPRO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// <exception cref="Exception_Archivo">Error en guardar archivo txt</exception>
+        /// <exception cref="Exception_SerializacionJson">Error en serializacion o deserializacion de un json</exception>
+        /// <exception cref="Exception_SerializacionXml">Error en serializacion o deserializacion de un xml</exception>
         private void btn_Campeon_Click(object sender, EventArgs e)
         {
             try
             {
-                GuardarComo(Jugador.Campeon());                
+                GuardarComo(Jugador.Campeon());
+                Mensaje();
             }
             catch (Exception_Archivo eArchivo)
             {
@@ -77,11 +81,15 @@ namespace Frm_TorneoPRO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// <exception cref="Exception_Archivo">Error en guardar archivo txt</exception>
+        /// <exception cref="Exception_SerializacionJson">Error en serializacion o deserializacion de un json</exception>
+        /// <exception cref="Exception_SerializacionXml">Error en serializacion o deserializacion de un xml</exception>
         private void btn_EstadisticaJugadores_Click(object sender, EventArgs e)
         {            
             try
             {
                 GuardarComo(TorneoPro.ListaJugadores);
+                Mensaje();
             }
             catch (Exception_Archivo eArchivo)
             {
@@ -125,7 +133,7 @@ namespace Frm_TorneoPRO
                 {
                     try
                     {
-                        SerializacionJson<Jugador>.Escribir2(tipo, this.saveFile.FileName);
+                        SerializacionJson<Jugador>.Escribir(tipo, this.saveFile.FileName);
                     }
                     catch (Exception ex)
                     {
@@ -136,7 +144,7 @@ namespace Frm_TorneoPRO
                 {
                     try
                     {
-                        SerializacionXml<Jugador>.Escribir2(tipo, this.saveFile.FileName);
+                        SerializacionXml<Jugador>.Escribir(tipo, this.saveFile.FileName);
                     }
                     catch (Exception ex)
                     {
@@ -146,8 +154,6 @@ namespace Frm_TorneoPRO
                 this.openFile.FileName = this.saveFile.FileName;
             }
         }
-
-
 
         /// <summary>
         /// Abre la opcion para poner el nombre, elegir la extension y guardar el archivo en la ruta seleccionada
@@ -162,7 +168,7 @@ namespace Frm_TorneoPRO
                 {
                     try
                     {
-                        Archivo<List<Jugador>>.EscribirLista(TorneoPro.Imprimir(tipo), this.saveFile.FileName);
+                        Archivo<List<Jugador>>.Escribir(TorneoPro.Imprimir(tipo), this.saveFile.FileName);
                     }
                     catch (Exception ex)
                     {
@@ -173,7 +179,7 @@ namespace Frm_TorneoPRO
                 {
                     try
                     {
-                        SerializacionJson<List<Jugador>>.Escribir2(tipo, this.saveFile.FileName);
+                        SerializacionJson<List<Jugador>>.Escribir(tipo, this.saveFile.FileName);
                     }
                     catch (Exception ex)
                     {
@@ -184,7 +190,7 @@ namespace Frm_TorneoPRO
                 {
                     try
                     {
-                        SerializacionXml<List<Jugador>>.Escribir2(tipo, this.saveFile.FileName);
+                        SerializacionXml<List<Jugador>>.Escribir(tipo, this.saveFile.FileName);
                     }
                     catch (Exception ex)
                     {
@@ -193,6 +199,12 @@ namespace Frm_TorneoPRO
                 }
                 this.openFile.FileName = this.saveFile.FileName;
             }
+        }
+
+        private void Mensaje()
+        {
+            Frm_Mensaje mensaje = new Frm_Mensaje("Archivo guardado\nEXITOSAMENTE!");
+            mensaje.ShowDialog();
         }
 
     }

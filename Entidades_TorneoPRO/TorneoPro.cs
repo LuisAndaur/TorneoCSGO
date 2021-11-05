@@ -116,7 +116,7 @@ namespace Entidades_TorneoPRO
         /// </summary>
         private static void CargarJugadores()
         {
-            listaJugadores = SerializacionJson<List<Jugador>>.LeerInicial("listaJugadores.json");
+            listaJugadores = SerializacionJson<List<Jugador>>.Leer("listaJugadores.json");
             if (listaJugadores==null)
             {
                 throw new Exception_SerializacionJson("No se deserializo la lista inicial");
@@ -128,9 +128,9 @@ namespace Entidades_TorneoPRO
         /// </summary>
         private static void CargarMapas()
         {
-            mapasDeathmatch = SerializacionJson<List<Deathmatch>>.LeerInicial("mapasDeathmatch.json");
-            mapasBomba = SerializacionJson<List<Bomba>>.LeerInicial("mapasBomba.json");
-            mapasRehenes = SerializacionJson<List<Rehenes>>.LeerInicial("mapasRehenes.json");
+            mapasDeathmatch = SerializacionJson<List<Deathmatch>>.Leer("mapasDeathmatch.json");
+            mapasBomba = SerializacionJson<List<Bomba>>.Leer("mapasBomba.json");
+            mapasRehenes = SerializacionJson<List<Rehenes>>.Leer("mapasRehenes.json");
             if (mapasDeathmatch == null || mapasBomba == null || mapasRehenes == null)
             {
                 throw new Exception_SerializacionJson("No se deserializo la lista inicial");
@@ -142,8 +142,6 @@ namespace Entidades_TorneoPRO
         /// </summary>
         /// <param name="numero"></param>
         /// <returns>True si existe el numero o false si no</returns>
-        /// 
-
         public static bool ExisteJugador(int numero)
         {
             foreach (Jugador item in listaJugadores)
