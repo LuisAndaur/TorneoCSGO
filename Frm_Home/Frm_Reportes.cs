@@ -31,6 +31,9 @@ namespace Frm_TorneoPRO
         {
             this.openFile.Filter = "Text Files |*.txt|Json File |*.json|Xml Files |*.xml";
             this.saveFile.Filter = "Text Files |*.txt|Json File |*.json|Xml Files |*.xml";
+            lbl_NombreTorneo.Text = TorneoPro.NombreTorneo;
+            lbl_Patrocinio.Text = TorneoPro.Patrocinio;
+            lbl_Premio.Text = $"U$D{TorneoPro.Premio.ToString()}";
         }
 
         /// <summary>
@@ -89,6 +92,237 @@ namespace Frm_TorneoPRO
             try
             {
                 GuardarComo(TorneoPro.ListaJugadores);
+                Mensaje();
+            }
+            catch (Exception_Archivo eArchivo)
+            {
+                MessageBox.Show(eArchivo.Message, "ERROR al guardar txt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionJson eSerializacionJson)
+            {
+                MessageBox.Show(eSerializacionJson.Message, "ERROR al guardar json", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionXml eSerializacionXml)
+            {
+                MessageBox.Show(eSerializacionXml.Message, "ERROR al guardar xml", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception auxEx)
+            {
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Reporta como los mas asesinos del torneo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="Exception_Archivo">Error en guardar archivo txt</exception>
+        /// <exception cref="Exception_SerializacionJson">Error en serializacion o deserializacion de un json</exception>
+        /// <exception cref="Exception_SerializacionXml">Error en serializacion o deserializacion de un xml</exception>
+        private void btn_MasKillers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                Mensaje();
+            }
+            catch (Exception_Archivo eArchivo)
+            {
+                MessageBox.Show(eArchivo.Message, "ERROR al guardar txt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionJson eSerializacionJson)
+            {
+                MessageBox.Show(eSerializacionJson.Message, "ERROR al guardar json", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionXml eSerializacionXml)
+            {
+                MessageBox.Show(eSerializacionXml.Message, "ERROR al guardar xml", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception auxEx)
+            {
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Reporta los peores jugadores en el torneo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="Exception_Archivo">Error en guardar archivo txt</exception>
+        /// <exception cref="Exception_SerializacionJson">Error en serializacion o deserializacion de un json</exception>
+        /// <exception cref="Exception_SerializacionXml">Error en serializacion o deserializacion de un xml</exception>
+        private void btn_MasMancos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Mensaje();
+            }
+            catch (Exception_Archivo eArchivo)
+            {
+                MessageBox.Show(eArchivo.Message, "ERROR al guardar txt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionJson eSerializacionJson)
+            {
+                MessageBox.Show(eSerializacionJson.Message, "ERROR al guardar json", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionXml eSerializacionXml)
+            {
+                MessageBox.Show(eSerializacionXml.Message, "ERROR al guardar xml", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception auxEx)
+            {
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Reporta los que juegan por primera vez el torneo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="Exception_Archivo">Error en guardar archivo txt</exception>
+        /// <exception cref="Exception_SerializacionJson">Error en serializacion o deserializacion de un json</exception>
+        /// <exception cref="Exception_SerializacionXml">Error en serializacion o deserializacion de un xml</exception>
+        private void btn_PrimerTorneo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Mensaje();
+            }
+            catch (Exception_Archivo eArchivo)
+            {
+                MessageBox.Show(eArchivo.Message, "ERROR al guardar txt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionJson eSerializacionJson)
+            {
+                MessageBox.Show(eSerializacionJson.Message, "ERROR al guardar json", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionXml eSerializacionXml)
+            {
+                MessageBox.Show(eSerializacionXml.Message, "ERROR al guardar xml", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception auxEx)
+            {
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Reporta los que plantaron mas bombas en el torneo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="Exception_Archivo">Error en guardar archivo txt</exception>
+        /// <exception cref="Exception_SerializacionJson">Error en serializacion o deserializacion de un json</exception>
+        /// <exception cref="Exception_SerializacionXml">Error en serializacion o deserializacion de un xml</exception>
+        private void btn_Bombarderos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Mensaje();
+            }
+            catch (Exception_Archivo eArchivo)
+            {
+                MessageBox.Show(eArchivo.Message, "ERROR al guardar txt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionJson eSerializacionJson)
+            {
+                MessageBox.Show(eSerializacionJson.Message, "ERROR al guardar json", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionXml eSerializacionXml)
+            {
+                MessageBox.Show(eSerializacionXml.Message, "ERROR al guardar xml", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception auxEx)
+            {
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Reporta los que rescataron mas rehenes en el torneo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="Exception_Archivo">Error en guardar archivo txt</exception>
+        /// <exception cref="Exception_SerializacionJson">Error en serializacion o deserializacion de un json</exception>
+        /// <exception cref="Exception_SerializacionXml">Error en serializacion o deserializacion de un xml</exception>
+        private void btn_Rescatistas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Mensaje();
+            }
+            catch (Exception_Archivo eArchivo)
+            {
+                MessageBox.Show(eArchivo.Message, "ERROR al guardar txt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionJson eSerializacionJson)
+            {
+                MessageBox.Show(eSerializacionJson.Message, "ERROR al guardar json", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionXml eSerializacionXml)
+            {
+                MessageBox.Show(eSerializacionXml.Message, "ERROR al guardar xml", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception auxEx)
+            {
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Reporta los jugadores especialistas XXL con mas headshots en el torneo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="Exception_Archivo">Error en guardar archivo txt</exception>
+        /// <exception cref="Exception_SerializacionJson">Error en serializacion o deserializacion de un json</exception>
+        /// <exception cref="Exception_SerializacionXml">Error en serializacion o deserializacion de un xml</exception>
+        private void btn_Headshot_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Mensaje();
+            }
+            catch (Exception_Archivo eArchivo)
+            {
+                MessageBox.Show(eArchivo.Message, "ERROR al guardar txt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionJson eSerializacionJson)
+            {
+                MessageBox.Show(eSerializacionJson.Message, "ERROR al guardar json", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception_SerializacionXml eSerializacionXml)
+            {
+                MessageBox.Show(eSerializacionXml.Message, "ERROR al guardar xml", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception auxEx)
+            {
+                MessageBox.Show(auxEx.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Reporta el jugador mas joven del torneo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="Exception_Archivo">Error en guardar archivo txt</exception>
+        /// <exception cref="Exception_SerializacionJson">Error en serializacion o deserializacion de un json</exception>
+        /// <exception cref="Exception_SerializacionXml">Error en serializacion o deserializacion de un xml</exception>
+        private void btn_ElMenor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
                 Mensaje();
             }
             catch (Exception_Archivo eArchivo)
@@ -204,8 +438,10 @@ namespace Frm_TorneoPRO
         private void Mensaje()
         {
             Frm_Mensaje mensaje = new Frm_Mensaje("Archivo guardado\nEXITOSAMENTE!");
+            mensaje.BackColor = Color.FromArgb(222,40,50); ;
             mensaje.ShowDialog();
         }
 
+        
     }
 }

@@ -35,14 +35,17 @@ namespace Frm_TorneoPRO
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_Campeon = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_MasKillers = new System.Windows.Forms.Button();
             this.btn_EstadisticaJugadores = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btn_MasMancos = new System.Windows.Forms.Button();
+            this.btn_PrimerTorneo = new System.Windows.Forms.Button();
+            this.btn_Bombarderos = new System.Windows.Forms.Button();
+            this.btn_Rescatistas = new System.Windows.Forms.Button();
+            this.btn_Headshot = new System.Windows.Forms.Button();
+            this.btn_ElMenor = new System.Windows.Forms.Button();
+            this.lbl_NombreTorneo = new System.Windows.Forms.Label();
+            this.lbl_Patrocinio = new System.Windows.Forms.Label();
+            this.lbl_Premio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +72,7 @@ namespace Frm_TorneoPRO
             this.btn_Volver.Location = new System.Drawing.Point(25, 536);
             this.btn_Volver.Name = "btn_Volver";
             this.btn_Volver.Size = new System.Drawing.Size(207, 35);
-            this.btn_Volver.TabIndex = 7;
+            this.btn_Volver.TabIndex = 10;
             this.btn_Volver.Text = "Volver";
             this.btn_Volver.UseVisualStyleBackColor = false;
             this.btn_Volver.Click += new System.EventHandler(this.btn_Volver_Click);
@@ -82,13 +85,13 @@ namespace Frm_TorneoPRO
             this.lbl_Titulo.Location = new System.Drawing.Point(25, 27);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(160, 21);
-            this.lbl_Titulo.TabIndex = 9;
+            this.lbl_Titulo.TabIndex = 0;
             this.lbl_Titulo.Text = "Reportes del torneo";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Frm_TorneoPRO.Properties.Resources.Logo_CSGO;
-            this.pictureBox2.Location = new System.Drawing.Point(727, 7);
+            this.pictureBox2.Location = new System.Drawing.Point(392, 7);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(101, 48);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,27 +111,28 @@ namespace Frm_TorneoPRO
             this.btn_Campeon.Location = new System.Drawing.Point(25, 77);
             this.btn_Campeon.Name = "btn_Campeon";
             this.btn_Campeon.Size = new System.Drawing.Size(207, 35);
-            this.btn_Campeon.TabIndex = 11;
+            this.btn_Campeon.TabIndex = 1;
             this.btn_Campeon.Text = "Campeon del torneo";
             this.btn_Campeon.UseVisualStyleBackColor = false;
             this.btn_Campeon.Click += new System.EventHandler(this.btn_Campeon_Click);
             // 
-            // button2
+            // btn_MasKillers
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.Firebrick;
-            this.button2.Location = new System.Drawing.Point(25, 178);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(207, 35);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Los más Killers";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_MasKillers.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_MasKillers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
+            this.btn_MasKillers.FlatAppearance.BorderSize = 2;
+            this.btn_MasKillers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
+            this.btn_MasKillers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
+            this.btn_MasKillers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_MasKillers.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_MasKillers.ForeColor = System.Drawing.Color.Firebrick;
+            this.btn_MasKillers.Location = new System.Drawing.Point(25, 178);
+            this.btn_MasKillers.Name = "btn_MasKillers";
+            this.btn_MasKillers.Size = new System.Drawing.Size(207, 35);
+            this.btn_MasKillers.TabIndex = 3;
+            this.btn_MasKillers.Text = "Los más Killers";
+            this.btn_MasKillers.UseVisualStyleBackColor = false;
+            this.btn_MasKillers.Click += new System.EventHandler(this.btn_MasKillers_Click);
             // 
             // btn_EstadisticaJugadores
             // 
@@ -143,112 +147,157 @@ namespace Frm_TorneoPRO
             this.btn_EstadisticaJugadores.Location = new System.Drawing.Point(25, 127);
             this.btn_EstadisticaJugadores.Name = "btn_EstadisticaJugadores";
             this.btn_EstadisticaJugadores.Size = new System.Drawing.Size(207, 35);
-            this.btn_EstadisticaJugadores.TabIndex = 13;
+            this.btn_EstadisticaJugadores.TabIndex = 2;
             this.btn_EstadisticaJugadores.Text = "Estadisticas de Jugadores";
             this.btn_EstadisticaJugadores.UseVisualStyleBackColor = false;
             this.btn_EstadisticaJugadores.Click += new System.EventHandler(this.btn_EstadisticaJugadores_Click);
             // 
-            // button1
+            // btn_MasMancos
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.Firebrick;
-            this.button1.Location = new System.Drawing.Point(25, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(207, 35);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Los más mancos";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_MasMancos.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_MasMancos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
+            this.btn_MasMancos.FlatAppearance.BorderSize = 2;
+            this.btn_MasMancos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
+            this.btn_MasMancos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
+            this.btn_MasMancos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_MasMancos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_MasMancos.ForeColor = System.Drawing.Color.Firebrick;
+            this.btn_MasMancos.Location = new System.Drawing.Point(25, 228);
+            this.btn_MasMancos.Name = "btn_MasMancos";
+            this.btn_MasMancos.Size = new System.Drawing.Size(207, 35);
+            this.btn_MasMancos.TabIndex = 4;
+            this.btn_MasMancos.Text = "Los más mancos";
+            this.btn_MasMancos.UseVisualStyleBackColor = false;
+            this.btn_MasMancos.Click += new System.EventHandler(this.btn_MasMancos_Click);
             // 
-            // button3
+            // btn_PrimerTorneo
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.Firebrick;
-            this.button3.Location = new System.Drawing.Point(25, 278);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(207, 35);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Jugadores con mas kills";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_PrimerTorneo.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_PrimerTorneo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
+            this.btn_PrimerTorneo.FlatAppearance.BorderSize = 2;
+            this.btn_PrimerTorneo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
+            this.btn_PrimerTorneo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
+            this.btn_PrimerTorneo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_PrimerTorneo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_PrimerTorneo.ForeColor = System.Drawing.Color.Firebrick;
+            this.btn_PrimerTorneo.Location = new System.Drawing.Point(25, 278);
+            this.btn_PrimerTorneo.Name = "btn_PrimerTorneo";
+            this.btn_PrimerTorneo.Size = new System.Drawing.Size(207, 35);
+            this.btn_PrimerTorneo.TabIndex = 5;
+            this.btn_PrimerTorneo.Text = "Primer Torneo";
+            this.btn_PrimerTorneo.UseVisualStyleBackColor = false;
+            this.btn_PrimerTorneo.Click += new System.EventHandler(this.btn_PrimerTorneo_Click);
             // 
-            // button4
+            // btn_Bombarderos
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.Firebrick;
-            this.button4.Location = new System.Drawing.Point(25, 329);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(207, 35);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Bombarderos";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_Bombarderos.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_Bombarderos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
+            this.btn_Bombarderos.FlatAppearance.BorderSize = 2;
+            this.btn_Bombarderos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
+            this.btn_Bombarderos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
+            this.btn_Bombarderos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Bombarderos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Bombarderos.ForeColor = System.Drawing.Color.Firebrick;
+            this.btn_Bombarderos.Location = new System.Drawing.Point(25, 329);
+            this.btn_Bombarderos.Name = "btn_Bombarderos";
+            this.btn_Bombarderos.Size = new System.Drawing.Size(207, 35);
+            this.btn_Bombarderos.TabIndex = 6;
+            this.btn_Bombarderos.Text = "Bombarderos";
+            this.btn_Bombarderos.UseVisualStyleBackColor = false;
+            this.btn_Bombarderos.Click += new System.EventHandler(this.btn_Bombarderos_Click);
             // 
-            // button5
+            // btn_Rescatistas
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.Firebrick;
-            this.button5.Location = new System.Drawing.Point(25, 375);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(207, 35);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Rescatistas";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_Rescatistas.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_Rescatistas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
+            this.btn_Rescatistas.FlatAppearance.BorderSize = 2;
+            this.btn_Rescatistas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
+            this.btn_Rescatistas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
+            this.btn_Rescatistas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Rescatistas.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Rescatistas.ForeColor = System.Drawing.Color.Firebrick;
+            this.btn_Rescatistas.Location = new System.Drawing.Point(25, 375);
+            this.btn_Rescatistas.Name = "btn_Rescatistas";
+            this.btn_Rescatistas.Size = new System.Drawing.Size(207, 35);
+            this.btn_Rescatistas.TabIndex = 7;
+            this.btn_Rescatistas.Text = "Rescatistas";
+            this.btn_Rescatistas.UseVisualStyleBackColor = false;
+            this.btn_Rescatistas.Click += new System.EventHandler(this.btn_Rescatistas_Click);
             // 
-            // button6
+            // btn_Headshot
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.button6.FlatAppearance.BorderSize = 2;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.Firebrick;
-            this.button6.Location = new System.Drawing.Point(25, 425);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(207, 35);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "XXL Headshots";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_Headshot.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_Headshot.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
+            this.btn_Headshot.FlatAppearance.BorderSize = 2;
+            this.btn_Headshot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
+            this.btn_Headshot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
+            this.btn_Headshot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Headshot.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Headshot.ForeColor = System.Drawing.Color.Firebrick;
+            this.btn_Headshot.Location = new System.Drawing.Point(25, 425);
+            this.btn_Headshot.Name = "btn_Headshot";
+            this.btn_Headshot.Size = new System.Drawing.Size(207, 35);
+            this.btn_Headshot.TabIndex = 8;
+            this.btn_Headshot.Text = "XXL Headshots";
+            this.btn_Headshot.UseVisualStyleBackColor = false;
+            this.btn_Headshot.Click += new System.EventHandler(this.btn_Headshot_Click);
             // 
-            // button7
+            // btn_ElMenor
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.button7.FlatAppearance.BorderSize = 2;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.Color.Firebrick;
-            this.button7.Location = new System.Drawing.Point(25, 476);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(207, 35);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "El menor";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btn_ElMenor.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btn_ElMenor.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
+            this.btn_ElMenor.FlatAppearance.BorderSize = 2;
+            this.btn_ElMenor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSalmon;
+            this.btn_ElMenor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSalmon;
+            this.btn_ElMenor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ElMenor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_ElMenor.ForeColor = System.Drawing.Color.Firebrick;
+            this.btn_ElMenor.Location = new System.Drawing.Point(25, 476);
+            this.btn_ElMenor.Name = "btn_ElMenor";
+            this.btn_ElMenor.Size = new System.Drawing.Size(207, 35);
+            this.btn_ElMenor.TabIndex = 9;
+            this.btn_ElMenor.Text = "El menor";
+            this.btn_ElMenor.UseVisualStyleBackColor = false;
+            this.btn_ElMenor.Click += new System.EventHandler(this.btn_ElMenor_Click);
+            // 
+            // lbl_NombreTorneo
+            // 
+            this.lbl_NombreTorneo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_NombreTorneo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_NombreTorneo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lbl_NombreTorneo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_NombreTorneo.Location = new System.Drawing.Point(654, 24);
+            this.lbl_NombreTorneo.Name = "lbl_NombreTorneo";
+            this.lbl_NombreTorneo.Size = new System.Drawing.Size(160, 26);
+            this.lbl_NombreTorneo.TabIndex = 11;
+            this.lbl_NombreTorneo.Text = "nombre";
+            this.lbl_NombreTorneo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_Patrocinio
+            // 
+            this.lbl_Patrocinio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Patrocinio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Patrocinio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lbl_Patrocinio.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_Patrocinio.Location = new System.Drawing.Point(654, 50);
+            this.lbl_Patrocinio.Name = "lbl_Patrocinio";
+            this.lbl_Patrocinio.Size = new System.Drawing.Size(160, 26);
+            this.lbl_Patrocinio.TabIndex = 12;
+            this.lbl_Patrocinio.Text = "patrocinio";
+            this.lbl_Patrocinio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_Premio
+            // 
+            this.lbl_Premio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Premio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Premio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lbl_Premio.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_Premio.Location = new System.Drawing.Point(654, 80);
+            this.lbl_Premio.Name = "lbl_Premio";
+            this.lbl_Premio.Size = new System.Drawing.Size(160, 26);
+            this.lbl_Premio.TabIndex = 13;
+            this.lbl_Premio.Text = "premio";
+            this.lbl_Premio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Frm_Reportes
             // 
@@ -256,14 +305,17 @@ namespace Frm_TorneoPRO
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(840, 595);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lbl_Premio);
+            this.Controls.Add(this.lbl_Patrocinio);
+            this.Controls.Add(this.lbl_NombreTorneo);
+            this.Controls.Add(this.btn_ElMenor);
+            this.Controls.Add(this.btn_Headshot);
+            this.Controls.Add(this.btn_Rescatistas);
+            this.Controls.Add(this.btn_Bombarderos);
+            this.Controls.Add(this.btn_PrimerTorneo);
+            this.Controls.Add(this.btn_MasMancos);
             this.Controls.Add(this.btn_EstadisticaJugadores);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_MasKillers);
             this.Controls.Add(this.btn_Campeon);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lbl_Titulo);
@@ -289,13 +341,16 @@ namespace Frm_TorneoPRO
         private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_Campeon;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_MasKillers;
         private System.Windows.Forms.Button btn_EstadisticaJugadores;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_MasMancos;
+        private System.Windows.Forms.Button btn_PrimerTorneo;
+        private System.Windows.Forms.Button btn_Bombarderos;
+        private System.Windows.Forms.Button btn_Rescatistas;
+        private System.Windows.Forms.Button btn_Headshot;
+        private System.Windows.Forms.Button btn_ElMenor;
+        private System.Windows.Forms.Label lbl_NombreTorneo;
+        private System.Windows.Forms.Label lbl_Patrocinio;
+        private System.Windows.Forms.Label lbl_Premio;
     }
 }
