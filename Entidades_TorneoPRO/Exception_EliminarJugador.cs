@@ -9,12 +9,20 @@ namespace Entidades_TorneoPRO
     public class Exception_EliminarJugador : Exception
     {
 
-
-        public Exception_EliminarJugador() : base()
+        /// <summary>
+        /// Crea una excepcion con un mensaje
+        /// </summary>
+        /// <param name="message">Mensaje de la excepcion</param>
+        public Exception_EliminarJugador(string message) : this(message, null)
         {
 
         }
 
+        /// <summary>
+        /// Crea una excepcion con un mensaje y un innerException
+        /// </summary>
+        /// <param name="message">Mensaje de la excepcion</param>
+        /// <param name="innerException">innerException de la excepcion</param>
         public Exception_EliminarJugador(string message, Exception innerException) : base(message, innerException)
         {
 

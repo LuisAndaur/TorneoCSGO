@@ -59,7 +59,6 @@ namespace Frm_TorneoPRO
             try
             {
                 GuardarComo(Jugador.Campeon(TorneoPro.ListaJugadores));
-                Mensaje();
             }
             catch (Exception_Archivo eArchivo)
             {
@@ -92,7 +91,6 @@ namespace Frm_TorneoPRO
             try
             {
                 GuardarComo(Jugador.PorPuntos(TorneoPro.ListaJugadores));
-                Mensaje();
             }
             catch (Exception_Archivo eArchivo)
             {
@@ -125,7 +123,6 @@ namespace Frm_TorneoPRO
             try
             {
                 GuardarComo(Jugador.MasKills(TorneoPro.ListaJugadores));
-                Mensaje();
             }
             catch (Exception_Archivo eArchivo)
             {
@@ -158,7 +155,6 @@ namespace Frm_TorneoPRO
             try
             {
                 GuardarComo(Jugador.MasMancos(TorneoPro.ListaJugadores));
-                Mensaje();
             }
             catch (Exception_Archivo eArchivo)
             {
@@ -191,7 +187,6 @@ namespace Frm_TorneoPRO
             try
             {
                 GuardarComo(Jugador.ListaPrimerTorneo(TorneoPro.ListaJugadores));
-                Mensaje();
             }
             catch (Exception_Archivo eArchivo)
             {
@@ -224,7 +219,6 @@ namespace Frm_TorneoPRO
             try
             {
                 GuardarComo(Jugador.Bombarderos(TorneoPro.ListaJugadores));
-                Mensaje();
             }
             catch (Exception_Archivo eArchivo)
             {
@@ -257,7 +251,6 @@ namespace Frm_TorneoPRO
             try
             {
                 GuardarComo(Jugador.Rescatistas(TorneoPro.ListaJugadores));
-                Mensaje();
             }
             catch (Exception_Archivo eArchivo)
             {
@@ -290,7 +283,6 @@ namespace Frm_TorneoPRO
             try
             {
                 GuardarComo(Jugador.XxlHeadshots(TorneoPro.ListaJugadores));
-                Mensaje();
             }
             catch (Exception_Archivo eArchivo)
             {
@@ -322,8 +314,7 @@ namespace Frm_TorneoPRO
         {
             try
             {
-                GuardarComo(Jugador.MasJoven(TorneoPro.ListaJugadores));
-                Mensaje();
+                GuardarComo(Jugador.MasJoven(TorneoPro.ListaJugadores));                
             }
             catch (Exception_Archivo eArchivo)
             {
@@ -358,9 +349,9 @@ namespace Frm_TorneoPRO
                     {
                         Archivo<Jugador>.Escribir(tipo, this.saveFile.FileName);
                     }
-                    catch (Exception ex)
+                    catch (Exception_Archivo ex)
                     {
-                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message, "Error en archivo txt", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else if (Path.GetExtension(this.saveFile.FileName) == ".json")
@@ -369,9 +360,9 @@ namespace Frm_TorneoPRO
                     {
                         SerializacionJson<Jugador>.Escribir(tipo, this.saveFile.FileName);
                     }
-                    catch (Exception ex)
+                    catch (Exception_SerializacionJson ex)
                     {
-                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message, "Error en archivo json", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else if (Path.GetExtension(this.saveFile.FileName) == ".xml")
@@ -380,12 +371,13 @@ namespace Frm_TorneoPRO
                     {
                         SerializacionXml<Jugador>.Escribir(tipo, this.saveFile.FileName);
                     }
-                    catch (Exception ex)
+                    catch (Exception_SerializacionXml ex)
                     {
-                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message, "Error en archivo xml", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 this.openFile.FileName = this.saveFile.FileName;
+                Mensaje();
             }
         }
 
@@ -432,6 +424,7 @@ namespace Frm_TorneoPRO
                     }
                 }
                 this.openFile.FileName = this.saveFile.FileName;
+                Mensaje();
             }
         }
 

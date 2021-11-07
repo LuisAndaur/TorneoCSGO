@@ -47,7 +47,7 @@ namespace Entidades_TorneoPRO
                 }
                 else
                 {
-                    throw new Exception_StringNullOrEmpty();
+                    throw new Exception_StringNullOrEmpty("Error campo vacío o null");
                 }
             }
         }
@@ -67,7 +67,7 @@ namespace Entidades_TorneoPRO
                 }
                 else
                 {
-                    throw new Exception_EdadInvalida();
+                    throw new Exception_EdadInvalida("Error la edad esta fuera de rango");
                 }
             }
         }
@@ -87,7 +87,7 @@ namespace Entidades_TorneoPRO
                 }
                 else
                 {
-                    throw new Exception_GeneroInvalido();
+                    throw new Exception_GeneroInvalido("Error genero incorrecto");
                 }
             }
         }
@@ -107,7 +107,7 @@ namespace Entidades_TorneoPRO
                 }
                 else
                 {
-                    throw new Exception_StringNullOrEmpty();
+                    throw new Exception_StringNullOrEmpty("Error campo vacío o null");
                 }
             }
         }
@@ -127,7 +127,7 @@ namespace Entidades_TorneoPRO
                 }
                 else
                 {
-                    throw new Exception_EspecialidadFueraDeRango();
+                    throw new Exception_EspecialidadFueraDeRango("Error la especialidad no coincide");
                 }
             }
         }
@@ -181,7 +181,7 @@ namespace Entidades_TorneoPRO
             this.Edad = edad;
             this.Genero = genero;
             this.Nacionalidad = nacionalidad;
-            this.especialidad = especialidad;
+            this.Especialidad = especialidad;
             this.PrimerTorneo = primerTorneo;
             this.eJugador = new Estadistica();
         }

@@ -173,7 +173,7 @@ namespace Entidades_TorneoPRO
                 int.TryParse(nroJugador, out int auxNroJugador);
                 if (ExisteJugador(auxNroJugador))
                 {
-                    throw new Exception_NroJugadorYaExiste();
+                    throw new Exception_NroJugadorYaExiste("Error el nro de jugador ya existe");
                 }
                 int.TryParse(edad, out int auxEdad);                
 
@@ -181,7 +181,7 @@ namespace Entidades_TorneoPRO
             }
             else
             {
-                throw new Exception_ErrorAgregarJugador();
+                throw new Exception_ErrorAgregarJugador("Error al intentar agregar un jugador");
             }
         }
 
@@ -209,7 +209,7 @@ namespace Entidades_TorneoPRO
             }
             else
             {
-                throw new Exception_EditarJugador();
+                throw new Exception_EditarJugador("Error al intentar editar un jugador");
             }
         }
 
@@ -232,7 +232,7 @@ namespace Entidades_TorneoPRO
             }
             else
             {
-                throw new Exception_EliminarJugador();
+                throw new Exception_EliminarJugador("Error al intentar eliminar un jugador");
             }
         }
 

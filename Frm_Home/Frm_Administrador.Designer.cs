@@ -40,6 +40,13 @@ namespace Frm_TorneoPRO
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.btn_Editar = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
+            this.NroJugador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nacionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrimerTorneo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaJugadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,6 +83,14 @@ namespace Frm_TorneoPRO
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_ListaJugadores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ListaJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_ListaJugadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NroJugador,
+            this.Nombre,
+            this.Edad,
+            this.Genero,
+            this.Nacionalidad,
+            this.Especialidad,
+            this.PrimerTorneo});
             this.dgv_ListaJugadores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_ListaJugadores.EnableHeadersVisualStyles = false;
             this.dgv_ListaJugadores.GridColor = System.Drawing.Color.Firebrick;
@@ -186,6 +201,50 @@ namespace Frm_TorneoPRO
             this.btn_Agregar.UseVisualStyleBackColor = false;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
+            // NroJugador
+            // 
+            this.NroJugador.HeaderText = "Nro. Jugador";
+            this.NroJugador.Name = "NroJugador";
+            this.NroJugador.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Edad
+            // 
+            this.Edad.HeaderText = "Edad";
+            this.Edad.Name = "Edad";
+            this.Edad.ReadOnly = true;
+            // 
+            // Genero
+            // 
+            this.Genero.HeaderText = "Genero";
+            this.Genero.Name = "Genero";
+            this.Genero.ReadOnly = true;
+            // 
+            // Nacionalidad
+            // 
+            this.Nacionalidad.HeaderText = "Nacionalidad";
+            this.Nacionalidad.Name = "Nacionalidad";
+            this.Nacionalidad.ReadOnly = true;
+            // 
+            // Especialidad
+            // 
+            this.Especialidad.HeaderText = "Especialidad";
+            this.Especialidad.Name = "Especialidad";
+            this.Especialidad.ReadOnly = true;
+            // 
+            // PrimerTorneo
+            // 
+            this.PrimerTorneo.HeaderText = "Primer Torneo";
+            this.PrimerTorneo.Name = "PrimerTorneo";
+            this.PrimerTorneo.ReadOnly = true;
+            this.PrimerTorneo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.PrimerTorneo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Frm_Administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -223,5 +282,12 @@ namespace Frm_TorneoPRO
         private System.Windows.Forms.Button btn_Eliminar;
         private System.Windows.Forms.Button btn_Editar;
         private System.Windows.Forms.Button btn_Agregar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroJugador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Genero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nacionalidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Especialidad;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn PrimerTorneo;
     }
 }

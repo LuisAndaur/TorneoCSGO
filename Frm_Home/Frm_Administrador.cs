@@ -146,8 +146,18 @@ namespace Frm_TorneoPRO
         /// </summary>
         private void RecargarListaJugadores()
         {
-            dgv_ListaJugadores.DataSource = null;
-            dgv_ListaJugadores.DataSource = listaJugadores;
+            dgv_ListaJugadores.Rows.Clear();
+            foreach (Jugador item in listaJugadores)
+            {
+                indice = dgv_ListaJugadores.Rows.Add();
+                dgv_ListaJugadores.Rows[indice].Cells[0].Value = item.NroJugador;
+                dgv_ListaJugadores.Rows[indice].Cells[1].Value = item.Nombre;
+                dgv_ListaJugadores.Rows[indice].Cells[2].Value = item.Edad;
+                dgv_ListaJugadores.Rows[indice].Cells[3].Value = item.Genero;
+                dgv_ListaJugadores.Rows[indice].Cells[4].Value = item.Nacionalidad;
+                dgv_ListaJugadores.Rows[indice].Cells[5].Value = item.Especialidad;
+                dgv_ListaJugadores.Rows[indice].Cells[6].Value = item.PrimerTorneo;
+            }
         }
     }
 }
