@@ -23,41 +23,46 @@ namespace Entidades_TorneoPRO
         /// <summary>
         /// Simula todas las partidas del torneo
         /// </summary>
-        public void SimularPartidas(List<Jugador> lista)
+        public bool SimularPartidas(List<Jugador> lista)
         {
-            foreach (Bomba mBomba in TorneoPro.MapasBomba)
+            if (lista != null)
             {
-                foreach (Jugador auxJugador in lista)
+                foreach (Bomba mBomba in TorneoPro.MapasBomba)
                 {
-                    kills = random.Next(0, 30);
-                    muertes = random.Next(0, 30);
-                    auxJugador.Estadistica.Actualizar(kills, muertes, 0, BombasPlantadas(), 0);
-                    mBomba.Estadistica.Actualizar(kills, muertes, 0, BombasPlantadas(), 0);                    
-                }                
-            }
-
-            foreach (Deathmatch mDeathmatch in TorneoPro.MapasDeathmatch)
-            {
-                foreach (Jugador auxJugador in lista)
-                {
-                    kills = random.Next(0, 30);
-                    muertes = random.Next(0, 30);
-                    auxJugador.Estadistica.Actualizar(kills, muertes, CantidadHeadshot(), 0, 0);
-                    mDeathmatch.Estadistica.Actualizar(kills, muertes, CantidadHeadshot(), 0, 0);
+                    foreach (Jugador auxJugador in lista)
+                    {
+                        kills = random.Next(0, 30);
+                        muertes = random.Next(0, 30);
+                        auxJugador.Estadistica.Actualizar(kills, muertes, 0, BombasPlantadas(), 0);
+                        mBomba.Estadistica.Actualizar(kills, muertes, 0, BombasPlantadas(), 0);
+                    }
                 }
-            }
 
-            foreach (Rehenes mRehenes in TorneoPro.MapasRehenes)
-            {
-                foreach (Jugador auxJugador in lista)
+                foreach (Deathmatch mDeathmatch in TorneoPro.MapasDeathmatch)
                 {
-                    kills = random.Next(0, 30);
-                    muertes = random.Next(0, 30);
-                    auxJugador.Estadistica.Actualizar(kills, muertes, 0, 0, RehenesRescatados());
-                    mRehenes.Estadistica.Actualizar(kills, muertes, 0, 0, RehenesRescatados());
+                    foreach (Jugador auxJugador in lista)
+                    {
+                        kills = random.Next(0, 30);
+                        muertes = random.Next(0, 30);
+                        auxJugador.Estadistica.Actualizar(kills, muertes, CantidadHeadshot(), 0, 0);
+                        mDeathmatch.Estadistica.Actualizar(kills, muertes, CantidadHeadshot(), 0, 0);
+                    }
                 }
+
+                foreach (Rehenes mRehenes in TorneoPro.MapasRehenes)
+                {
+                    foreach (Jugador auxJugador in lista)
+                    {
+                        kills = random.Next(0, 30);
+                        muertes = random.Next(0, 30);
+                        auxJugador.Estadistica.Actualizar(kills, muertes, 0, 0, RehenesRescatados());
+                        mRehenes.Estadistica.Actualizar(kills, muertes, 0, 0, RehenesRescatados());
+                    }
+                }
+                return true;
             }
 
+            return false;
         }
 
         /// <summary>

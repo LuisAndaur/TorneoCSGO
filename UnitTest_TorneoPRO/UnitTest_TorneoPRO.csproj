@@ -13,4 +13,8 @@
     <PackageReference Include="coverlet.collector" Version="3.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades_TorneoPRO\Entidades_TorneoPRO.csproj" />
+  </ItemGroup>
+
 </Project>

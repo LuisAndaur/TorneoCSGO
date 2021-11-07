@@ -194,15 +194,19 @@ namespace Entidades_TorneoPRO
         {
             Jugador auxJugador = new Jugador();
             int maximo = -5000;
-            foreach (Jugador item in lista)
+            if (lista != null && lista.Count != 0)
             {
-                if (item.Estadistica.Puntos > maximo)
+                foreach (Jugador item in lista)
                 {
-                    maximo = item.Estadistica.Puntos;
-                    auxJugador = item;
+                    if (item.Estadistica.Puntos > maximo)
+                    {
+                        maximo = item.Estadistica.Puntos;
+                        auxJugador = item;
+                    }
                 }
+                return auxJugador;
             }
-            return auxJugador;
+            return null;
         }
 
         /// <summary>

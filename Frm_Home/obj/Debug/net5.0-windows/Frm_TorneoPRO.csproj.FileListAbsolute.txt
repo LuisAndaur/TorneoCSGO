@@ -76,3 +76,4 @@ C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0
 C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Mensaje.resources
 C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Reportes.resources
 C:\Users\LuisAndaur\source\repos\TP3\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.Frm_Simulador.resources
+C:\Users\LuisAndaur\source\repos\TorneoCSGO\TorneoCSGO\Frm_Home\obj\Debug\net5.0-windows\Frm_TorneoPRO.csproj.CopyComplete

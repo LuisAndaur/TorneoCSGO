@@ -340,6 +340,7 @@ namespace Frm_TorneoPRO
         /// <param name="tipo">Nombre del parametro</param>
         private void GuardarComo(Jugador tipo)
         {
+            this.saveFile.FileName = string.Empty;
             this.saveFile.ShowDialog();
             if (this.saveFile.FileName != String.Empty)
             {
@@ -387,6 +388,7 @@ namespace Frm_TorneoPRO
         /// <param name="tipo">Nombre del parametro</param>
         private void GuardarComo(List<Jugador> tipo)
         {
+            this.saveFile.FileName = string.Empty;
             this.saveFile.ShowDialog();
             if (this.saveFile.FileName != String.Empty)
             {
